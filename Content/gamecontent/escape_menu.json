@@ -1,0 +1,41 @@
+{
+    "Objects":[
+        {
+            "ClassName": "TextureRender",
+            "TextureName": "escape_menu",
+            "X": 400,
+            "Y": 60
+        },
+        {
+            "ClassName": "TextRender",
+            "X": 400,
+            "Width": 400,
+            "Y": 100,
+            "Height": 600,
+            "FontName": "fonts\\Roboto-Bold",
+            "Text": "Pong",
+            "FontSize": 36,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "Color": "#FF26E5"
+        },
+        {
+            "ClassName": "Button",
+            "X": 475,
+            "Y": 300,
+            "Width": 250,
+            "Height": 70,
+            "Text": "Continue",
+            "Name": "ContinueButton"
+        },
+        {
+            "ClassName": "Button",
+            "X": 475,
+            "Y": 420,
+            "Width": 250,
+            "Height": 70,
+            "Text": "Quit",
+            "Name": "QuitButton"
+        }
+    ]
+}

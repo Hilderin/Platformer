@@ -1,0 +1,19 @@
+{
+    "Objects":[
+        {
+            "ClassName": "Block",
+            "X": 100,
+            "Y": 200
+        },
+        {
+            "ClassName": "Block",
+            "X": 200,
+            "Y": 400
+        },
+        {
+            "ClassName": "Block",
+            "X": 200,
+            "Y": 200
+        }
+    ]
+}

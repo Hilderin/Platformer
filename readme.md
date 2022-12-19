@@ -1,4 +1,4 @@
-# Pong (FNA-XNA with FNAEngine2D)
+# Platformer (FNA-XNA with FNAEngine2D)
 
 The goal of this project is to have fun creating a little game with FNA-XNA and creating a little FNAEngine2D at the same time.
 
@@ -18,6 +18,6 @@ This projet uses:
 
 I just begun working with FNA-XNA, there's so must that can be added and upgraded.
 
-My plan is to upgrade my Pong game with different goodies and upgrade the engine at the same time.
+My plan is to upgrade my Platformer game with different goodies and upgrade the engine at the same time.
 
 

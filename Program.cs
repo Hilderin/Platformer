@@ -12,17 +12,21 @@ namespace Platformer
         public static void Main()
         {
 
+            //Keep 16:9 resolution
 #if DEBUG
-            GameHost.SetResolution(1200, 800, 640, 480, true);
+            GameHost.SetResolution(1280, 720, 640, 360, false);
 #else
-            GameHost.SetResolution(1200, 800, 1200, 800, true);
+            GameHost.SetResolution(1280, 720, 640, 360, true);
 #endif
+
+            GameHost.NbPixelPerMeterScale = 60;
 
             //GameHost.Run(new Win());
             //GameHost.Run(new GameOver());
             //GameHost.Run(new Test());
             //GameHost.Run(new EscapeMenu());
-            GameHost.Run(new PlatformerGame());
+            GameHost.Run(new TestGround());
+            //GameHost.Run(new PlatformerGame());
         }
     }
 }

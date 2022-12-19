@@ -46,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Obstacle.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="TestGround.cs" />
     <Compile Include="UI\Button.cs" />
     <Compile Include="UI\EscapeMenu.cs" />
     <Compile Include="UI\Win.cs" />

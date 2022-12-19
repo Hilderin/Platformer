@@ -19,7 +19,7 @@ namespace Platformer
             GameHost.SetResolution(1280, 720, 640, 360, true);
 #endif
 
-            GameHost.NbPixelPerMeterScale = 60;
+            GameHost.NbPixelPerMeter = 60;
 
             //GameHost.Run(new Win());
             //GameHost.Run(new GameOver());

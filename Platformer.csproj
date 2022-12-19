@@ -59,7 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FNA-XNA-Wrapper">
-      <Version>22.12.1</Version>
+      <Version>22.12.2</Version>
     </PackageReference>
     <PackageReference Include="SharpFont.NetStandard">
       <Version>1.0.5</Version>

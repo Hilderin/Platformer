@@ -1,5 +1,6 @@
 ﻿using FNAEngine2D;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,11 +19,12 @@ namespace Platformer
         /// </summary>
         public const int WIDTH = 50;
         public const int HEIGHT = 80;
+        public const int JUMP_HEIGHT = 80;
 
         /// <summary>
         /// Input control
         /// </summary>
-        private CharacterInput _input = new CharacterInput();
+        private CharacterInput _input;
 
         /// <summary>
         /// Rigit body
@@ -45,9 +47,32 @@ namespace Platformer
         private SpriteAnimationRender _runRightAnimation;
 
         /// <summary>
+        /// jumping left animation
+        /// </summary>
+        private SpriteAnimationRender _jumpLeftAnimation;
+
+        /// <summary>
+        /// jumping right animation
+        /// </summary>
+        private SpriteAnimationRender _jumpRightAnimation;
+
+
+        /// <summary>
         /// Current animation
         /// </summary>
         private SpriteAnimationRender _currentAnimation;
+
+        /// <summary>
+        /// Indicate if the player is grounded
+        /// </summary>
+        private bool _isGrounded = false;
+
+        /// <summary>
+        /// Last time was going right
+        /// </summary>
+        private bool _lastMoveWasRight = true;
+
+
 
         /// <summary>
         /// Construtor
@@ -56,6 +81,11 @@ namespace Platformer
         {
             this.Width = WIDTH;
             this.Height = HEIGHT;
+
+            //Setup the inputs...
+            _input = new CharacterInput();
+            _input.JumpKey = Keys.W;
+
         }
 
         /// <summary>
@@ -83,6 +113,16 @@ namespace Platformer
             _runRightAnimation.Bounds = this.Bounds.CenterBottom(_runRightAnimation.Width, _runRightAnimation.Height);
             _runRightAnimation.Enabled = false;
 
+            //jumping left animation...
+            _jumpLeftAnimation = Add(new SpriteAnimationRender("animations\\character_jump_left"));
+            _jumpLeftAnimation.Bounds = this.Bounds.CenterBottom(_jumpLeftAnimation.Width, _jumpLeftAnimation.Height);
+            _jumpLeftAnimation.Enabled = false;
+
+            //jumping left animation...
+            _jumpRightAnimation = Add(new SpriteAnimationRender("animations\\character_jump_right"));
+            _jumpRightAnimation.Bounds = this.Bounds.CenterBottom(_jumpRightAnimation.Width, _jumpRightAnimation.Height);
+            _jumpRightAnimation.Enabled = false;
+
         }
 
         /// <summary>
@@ -97,16 +137,30 @@ namespace Platformer
             //Applying physics...
             Vector2 nextPosition = _rigidBody.ApplyPhysics();
 
-            
 
             //Check for collision...
             Collision collistion = this.GetCollision(nextPosition, null);
             if (collistion != null)
             {
                 nextPosition = collistion.StopLocation;
+
+                //Is grounded?
+                _isGrounded = (nextPosition.Y == this.Y);
+
+            }
+            else
+            {
+                //Falling...
+                _isGrounded = false;
             }
 
             this.TranslateTo(nextPosition);
+
+            //Jumping??
+            if (_isGrounded && _input.IsJump)
+            {
+                _rigidBody.AddForce(new Vector2(0, -JUMP_HEIGHT), _rigidBody.SpeedMps * 1.5f);
+            }
 
 
             //Updating du animation...
@@ -123,7 +177,7 @@ namespace Platformer
             SpriteAnimationRender animationToUse;
 
             if (!_input.IsLeft && !_input.IsRight
-                || (_input.IsLeft && _input.IsRight))
+                     || (_input.IsLeft && _input.IsRight))
             {
                 //Not moving...
                 animationToUse = _idleAnimation;
@@ -132,18 +186,27 @@ namespace Platformer
             {
                 //Left....
                 animationToUse = _runLeftAnimation;
+                _lastMoveWasRight = false;
             }
             else if (_input.IsRight)
             {
-                //Left....
+                //Right....
                 animationToUse = _runRightAnimation;
+                _lastMoveWasRight = true;
             }
             else
             {
                 animationToUse = _idleAnimation;
             }
 
-
+            if (!_isGrounded)
+            {
+                //Jumping or falling...
+                if (_lastMoveWasRight)
+                    animationToUse = _jumpRightAnimation;
+                else
+                    animationToUse = _jumpLeftAnimation;
+            }
 
             if (animationToUse != _currentAnimation)
             {

@@ -1,0 +1,11 @@
+{
+  "SpriteName": "sprites\\character",
+  "Frames": [
+
+    {
+      "SpriteX": 5,
+      "SpriteY": 3,
+      "Duration": 100
+    }
+  ]
+}

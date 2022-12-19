@@ -25,6 +25,10 @@ namespace Platformer
             Add(new TextureRender("pixel", new Rectangle(0, 300, GameHost.Width, 2000)))
                 .EnableCollider();
 
+            //Obstacle
+            Add(new TextureRender("pixel", new Rectangle(300, 300 - Player.HEIGHT, Player.HEIGHT, Player.HEIGHT), Color.Blue))
+                .EnableCollider();
+
             //Player...
             Add(new Player());
         }

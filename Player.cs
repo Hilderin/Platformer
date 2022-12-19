@@ -156,6 +156,9 @@ namespace Platformer
 
             this.TranslateTo(nextPosition);
 
+
+
+            //--------------------
             //Jumping??
             if (_isGrounded && _input.IsJump)
             {

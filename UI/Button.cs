@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pong
+namespace Platformer.UI
 {
     public class Button : GameObject, IMouseEventHandler
     {

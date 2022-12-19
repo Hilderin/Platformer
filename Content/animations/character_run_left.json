@@ -1,0 +1,56 @@
+{
+  "SpriteName": "sprites\\character",
+  "Frames": [
+
+    {
+      "SpriteX": 0,
+      "SpriteY": 2,
+      "Duration": 100
+    },
+    {
+      "SpriteX": 1,
+      "SpriteY": 2,
+      "Duration": 100
+    },
+    {
+      "SpriteX": 2,
+      "SpriteY": 2,
+      "Duration": 100
+    },
+    {
+      "SpriteX": 3,
+      "SpriteY": 2,
+      "Duration": 100
+    },
+    {
+      "SpriteX": 4,
+      "SpriteY": 2,
+      "Duration": 100
+    },
+    {
+      "SpriteX": 5,
+      "SpriteY": 2,
+      "Duration": 100
+    },
+    {
+      "SpriteX": 6,
+      "SpriteY": 2,
+      "Duration": 100
+    },
+    {
+      "SpriteX": 7,
+      "SpriteY": 2,
+      "Duration": 100
+    },
+    {
+      "SpriteX": 8,
+      "SpriteY": 2,
+      "Duration": 100
+    },
+    {
+      "SpriteX": 9,
+      "SpriteY": 2,
+      "Duration": 100
+    }
+  ]
+}

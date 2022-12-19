@@ -13,11 +13,11 @@
             "Y": 100,
             "Height": 600,
             "FontName": "fonts\\Roboto-Bold",
-            "Text": "Pong",
+            "Text": "Platformer",
             "FontSize": 36,
             "HorizontalAlignment": "Center",
             "VerticalAlignment": "Top",
-            "Color": "#FF26E5"
+            "Color": "#000000"
         },
         {
             "ClassName": "Button",

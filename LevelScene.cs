@@ -1,35 +1,15 @@
 ﻿using FNAEngine2D;
-using Pong.Levels;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pong
+namespace Platformer
 {
     public class LevelScene: GameObject
     {
-
-        /// <summary>
-        /// Ball game object
-        /// </summary>
-        private Ball _ball;
-
-        /// <summary>
-        /// Racket game object
-        /// </summary>
-        private Racket _racket;
-
-        /// <summary>
-        /// Current level
-        /// </summary>
-        private ILevel _currentLevel;
-
-        /// <summary>
-        /// Get the current level
-        /// </summary>
-        public int CurrentLevelNumber { get { return _currentLevel.Number; } }
 
         /// <summary>
         /// Load the level
@@ -37,20 +17,41 @@ namespace Pong
         public override void Load()
         {
 
-            _currentLevel = Add(new Level1());
+            Add(new SpriteRender("sprites\\character", 0, 1));
 
-            //The ball and the racket...
-            _ball = Add(new Ball());
-            _racket = Add(new Racket());
+            Add(new SpriteAnimationRender("animations\\character_idle"))
+                .TranslateTo(new Vector2(0, 200));
+
+            Add(new SpriteAnimationRender("animations\\character_run_left"))
+                .TranslateTo(new Vector2(200, 200));
+
+            //Tile[][] tiles = new Tile[100][];
+
+            //for (int x = 0; x < 100; x++)
+            //{
+            //    Tile[] column = new Tile[100];
+
+            //    for (int y = 0; y < column.Length; y++)
+            //    {
+            //        column[y] = new Tile(16, 2);
+            //    }
+
+            //    tiles[x] = column;
+            //}
+
+
+            //var tileSetRenderer = Add(new TileSetRender("sprites\\tiles2", 16, 32));
+            //tileSetRenderer.Tiles = tiles;
+
 
         }
 
         /// <summary>
-        /// Reset the ball
+        /// Reset the player
         /// </summary>
-        public void ResetBall()
+        public void ResetPlayer()
         {
-            _ball.ResetPosition();
+            
         }
 
 

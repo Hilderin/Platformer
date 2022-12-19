@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pong", "Pong.csproj", "{77623785-A2FC-4639-B816-2226712BAEC0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platformer", "Platformer.csproj", "{77623785-A2FC-4639-B816-2226712BAEC0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNAEngine2D", "..\FNAEngine\FNAEngine2D\FNAEngine2D.csproj", "{475F6E6D-9B4D-452F-85DE-1353F6AE721E}"
 EndProject

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{77623785-A2FC-4639-B816-2226712BAEC0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Pong</RootNamespace>
-    <AssemblyName>Pong</AssemblyName>
+    <RootNamespace>Platformer</RootNamespace>
+    <AssemblyName>Platformer</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -39,30 +39,21 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>pong.ico</ApplicationIcon>
+    <ApplicationIcon>Platformer.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ball.cs" />
-    <Compile Include="Block.cs" />
-    <Compile Include="Bottom.cs" />
-    <Compile Include="Bullet.cs" />
-    <Compile Include="Button.cs" />
-    <Compile Include="EscapeMenu.cs" />
-    <Compile Include="GameBorder.cs" />
-    <Compile Include="Test.cs" />
-    <Compile Include="Win.cs" />
-    <Compile Include="GameOver.cs" />
-    <Compile Include="Levels\ILevel.cs" />
+    <Compile Include="Obstacle.cs" />
+    <Compile Include="UI\Button.cs" />
+    <Compile Include="UI\EscapeMenu.cs" />
+    <Compile Include="UI\Win.cs" />
+    <Compile Include="UI\GameOver.cs" />
     <Compile Include="LevelScene.cs" />
-    <Compile Include="Levels\Level1.cs" />
-    <Compile Include="LevelHelper.cs" />
-    <Compile Include="PongGame.cs" />
+    <Compile Include="PlatformerGame.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Racket.cs" />
-    <Compile Include="UI.cs" />
+    <Compile Include="UI\HUD.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FNA-XNA-Wrapper">
@@ -79,7 +70,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="pong.ico" />
+    <Content Include="Platformer.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

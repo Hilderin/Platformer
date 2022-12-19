@@ -1,0 +1,26 @@
+{
+  "SpriteName": "sprites\\character",
+  "Frames": [
+
+    {
+      "SpriteX": 0,
+      "SpriteY": 0,
+      "Duration": 200
+    },
+    {
+      "SpriteX": 1,
+      "SpriteY": 0,
+      "Duration": 200
+    },
+    {
+      "SpriteX": 2,
+      "SpriteY": 0,
+      "Duration": 200
+    },
+    {
+      "SpriteX": 3,
+      "SpriteY": 0,
+      "Duration": 200
+    }
+  ]
+}

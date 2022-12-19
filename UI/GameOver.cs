@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pong
+namespace Platformer.UI
 {
     /// <summary>
     /// GameOver
@@ -37,8 +37,8 @@ namespace Pong
         /// </summary>
         public void Retry()
         {
-            if(PongGame.Instance != null)
-                PongGame.Instance.Restart();
+            if(PlatformerGame.Instance != null)
+                PlatformerGame.Instance.Restart();
         }
     }
 }

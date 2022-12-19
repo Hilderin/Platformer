@@ -8,27 +8,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pong
+namespace Platformer
 {
     /// <summary>
-    /// Game de Pong
+    /// Game de Platformer
     /// </summary>
-    public class PongGame : GameObject
+    public class PlatformerGame : GameObject
     {
         /// <summary>
         /// Instance courante
         /// </summary>
-        public static PongGame Instance;
+        public static PlatformerGame Instance;
 
         /// <summary>
-        /// Nombre de balls
+        /// Number of lives
         /// </summary>
-        public int NbBalls = 3;
-
-        /// <summary>
-        /// Nombre de pts
-        /// </summary>
-        public int NbPts = 0;
+        public int NbLive = 3;
 
         /// <summary>
         /// Curent level
@@ -39,41 +34,18 @@ namespace Pong
         /// <summary>
         /// Constructeur
         /// </summary>
-        public PongGame()
+        public PlatformerGame()
         {
             Instance = this;
         }
 
-        /// <summary>
-        /// On a perdu une balle
-        /// </summary>
-        public void LostABall()
-        {
-            NbBalls--;
-
-            if (NbBalls < 0)
-                NbBalls = 0;
-
-            if (NbBalls > 0)
-            {
-                Level.ResetBall();
-            }
-            else
-            {
-                //On pause..
-                Level.Paused = true;
-
-                Add(new GameOver());
-            }
-        }
 
         /// <summary>
         /// Restart le level...
         /// </summary>
         public void Restart()
         {
-            NbBalls = 3;
-            NbPts = 0;
+            NbLive = 3;
 
             //Clearup de scene...
             RemoveAll();
@@ -82,7 +54,7 @@ namespace Pong
             Level = Add(new LevelScene());
 
             //UI!
-            Add(new UI());
+            //Add(new UI.HUD());
 
             MouseManager.HideMouse();
         }
@@ -92,7 +64,7 @@ namespace Pong
         /// </summary>
         public void Continue()
         {
-            Remove(typeof(EscapeMenu));
+            Remove(typeof(UI.EscapeMenu));
 
             Level.Paused = false;
 
@@ -106,7 +78,7 @@ namespace Pong
         {
             Level.Paused = true;
 
-            Add(new Win());
+            Add(new UI.Win());
         }
 
         /// <summary>
@@ -120,7 +92,7 @@ namespace Pong
         }
 
         /// <summary>
-        /// Update of PongGame
+        /// Update of PlatformerGame
         /// </summary>
         public override void Update()
         {
@@ -129,7 +101,7 @@ namespace Pong
             {
                 Level.Paused = true;
 
-                Add(new EscapeMenu());
+                Add(new UI.EscapeMenu());
             }
             
         }

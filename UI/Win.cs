@@ -23,7 +23,7 @@ namespace Platformer.UI
             Add(new TextRender("WIN", "fonts\\Roboto-Bold", 60, GameHost.Rectangle, Color.Green, TextHorizontalAlignment.Center, TextVerticalAlignment.Middle));
             Add(new Button("RETRY", new Rectangle(GameHost.CenterX - 100, GameHost.CenterY + 200, 200, 60), Retry));
 
-            SoundEffectPlayer.Play("sfx\\win");
+            SoundEffectPlayer.PlayStatic("sfx\\win");
 
             MediaPlayer.Stop();
 

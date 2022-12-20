@@ -1,5 +1,6 @@
 ﻿using FNAEngine2D;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace Platformer
         /// <summary>
         /// Real sizes
         /// </summary>
-        public const int WIDTH = 50;
+        public const int WIDTH = 48;
         public const int HEIGHT = 80;
         public const int JUMP_HEIGHT = 80;
 
@@ -68,11 +69,39 @@ namespace Platformer
         private bool _isGrounded = false;
 
         /// <summary>
+        /// Indicate if the player was grounded on the fast frame
+        /// </summary>
+        private bool _isLastGrounded = true;
+
+        /// <summary>
         /// Last time was going right
         /// </summary>
         private bool _lastMoveWasRight = true;
 
+        /// <summary>
+        /// Player for foot steps
+        /// </summary>
+        private SoundEffectPlayer _footstepPlayer;
 
+        /// <summary>
+        /// Footstep sound effect
+        /// </summary>
+        private Content<SoundEffect> _footstepSfx;
+
+        /// <summary>
+        /// Landing sound effect
+        /// </summary>
+        private Content<SoundEffect> _landSfx;
+
+        /// <summary>
+        /// Player for foot steps
+        /// </summary>
+        private SoundEffectPlayer _jumpPlayer;
+
+        /// <summary>
+        /// Jump sound effect
+        /// </summary>
+        private Content<SoundEffect> _jumpSfx;
 
         /// <summary>
         /// Construtor
@@ -123,6 +152,23 @@ namespace Platformer
             _jumpRightAnimation.Bounds = this.Bounds.CenterBottom(_jumpRightAnimation.Width, _jumpRightAnimation.Height);
             _jumpRightAnimation.Enabled = false;
 
+
+            //Footsteps........
+            _footstepPlayer = Add(new SoundEffectPlayer());
+            _footstepPlayer.Volume = 0.2f;
+            _footstepPlayer.MinimumRateSeconds = 0.5f;
+
+            _footstepSfx = _footstepPlayer.GetContent("sfx\\footsteps\\metal");
+            _landSfx = _footstepPlayer.GetContent("sfx\\footsteps\\metal");
+
+
+            //Jump...
+            _jumpPlayer = Add(new SoundEffectPlayer());
+            _jumpPlayer.Volume = 0.4f;
+            _jumpSfx = _footstepPlayer.GetContent("sfx\\footsteps\\jump");
+
+
+
         }
 
         /// <summary>
@@ -160,14 +206,24 @@ namespace Platformer
 
             //--------------------
             //Jumping??
-            if (_isGrounded && _input.IsJump)
+            if (_isGrounded && _input.IsNewJump)
             {
+                //Start jumping...
                 _rigidBody.AddForce(new Vector2(0, -JUMP_HEIGHT), _rigidBody.SpeedMps * 1.5f);
             }
 
 
             //Updating du animation...
             UpdateAnimation();
+
+            //Update sfx for footsteps...
+            UpdateFootstepsSfx();
+
+            //Update sfx for jumping...
+            UpdateJumpSfx();
+
+
+            _isLastGrounded = _isGrounded;
 
         }
 
@@ -179,13 +235,8 @@ namespace Platformer
         {
             SpriteAnimationRender animationToUse;
 
-            if (!_input.IsLeft && !_input.IsRight
-                     || (_input.IsLeft && _input.IsRight))
-            {
-                //Not moving...
-                animationToUse = _idleAnimation;
-            }
-            else if (_input.IsLeft)
+            
+            if (_input.IsLeft)
             {
                 //Left....
                 animationToUse = _runLeftAnimation;
@@ -223,6 +274,42 @@ namespace Platformer
 
 
 
+        }
+
+
+        /// <summary>
+        /// Updating sfx for footsteps
+        /// </summary>
+        private void UpdateFootstepsSfx()
+        {
+            if (_isGrounded)
+            {
+                if (!_isLastGrounded)
+                {
+                    //Landing...
+                    _footstepPlayer.Play(_landSfx);
+                }
+                else if (_input.IsLeft || _input.IsRight)
+                {
+                    //Footsteps!
+                    _footstepPlayer.Play(_footstepSfx);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Updating sfx for jumping
+        /// </summary>
+        private void UpdateJumpSfx()
+        {
+            if (!_isGrounded)
+            {
+                _jumpPlayer.Play(_jumpSfx);
+            }
+            else if (_isGrounded && _jumpPlayer.IsPlaying)
+            {
+                _jumpPlayer.Stop();
+            }
         }
     }
 }

@@ -23,8 +23,7 @@ namespace Platformer.UI
             Add(new TextRender("GAME OVER", "fonts\\Roboto-Bold", 60, GameHost.Rectangle, Color.DarkRed, TextHorizontalAlignment.Center, TextVerticalAlignment.Middle));
             Add(new Button("RETRY", new Rectangle(GameHost.CenterX - 100, GameHost.CenterY + 200, 200, 60), Retry));
 
-
-            GameHost.GetContent<SoundEffect>("sfx\\gameover").Play();
+            SoundEffectPlayer.Play("sfx\\gameover");
 
             MediaPlayer.Stop();
 

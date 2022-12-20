@@ -20,11 +20,11 @@ namespace Platformer
         public override void Load()
         {
             //Background
-            Add(new TextureRender("pixel", GameHost.Bounds, Color.Black));
+            Add(new TextureRender("backgrounds\\night", GameHost.Bounds));
 
             //Floor...
             //Add(new TextureRender("animations\\character_run_right"));
-            Add(new SpriteAnimationRender("animations\\character_run_right")).ResizeTo(96, 96);
+            //Add(new SpriteAnimationRender("animations\\character_run_right")).ResizeTo(96, 96);
 
             //Floor...
             Add(new TextureRender("pixel", new Rectangle(0, 300, GameHost.Width, 2000)))

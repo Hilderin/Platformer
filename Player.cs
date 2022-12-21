@@ -19,8 +19,9 @@ namespace Platformer
         /// Real sizes
         /// </summary>
         public const int WIDTH = 48;
-        public const int HEIGHT = 80;
-        public const int JUMP_HEIGHT = 80;
+        public const int HEIGHT = 48;
+        public const int JUMP_HEIGHT = 48;
+        public readonly Vector2 OFFSET_CAMERA = new Vector2(WIDTH / 2, HEIGHT / 2);
 
         /// <summary>
         /// Input control
@@ -225,6 +226,18 @@ namespace Platformer
 
             _isLastGrounded = _isGrounded;
 
+            GameHost.DefaultCamera.Location = nextPosition + OFFSET_CAMERA - new Vector2(GameHost.CenterX, GameHost.CenterY);
+            //GameHost.ExtraCameras[0].Location = nextPosition + OFFSET_CAMERA;
+            //GameHost.DefaultCamera.Rotation += 0.01f;
+
+            //if (_input.IsLeft)
+            //    GameHost.DefaultCamera.Location = GameHost.DefaultCamera.Location.AddX(-10);
+            //else if (_input.IsRight)
+            //    GameHost.DefaultCamera.Location = GameHost.DefaultCamera.Location.AddX(10);
+            //if (_input.IsUp)
+            //    GameHost.DefaultCamera.Location = GameHost.DefaultCamera.Location.AddY(-10);
+            //else if (_input.IsDown)
+            //    GameHost.DefaultCamera.Location = GameHost.DefaultCamera.Location.AddY(10);
         }
 
 

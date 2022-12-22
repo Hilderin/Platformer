@@ -1,0 +1,16 @@
+{
+  "Objects": [
+    {
+      "ClassName": "TextRender",
+      "RotationOrigin": "0, 0",
+      "FontName": "fonts\\Roboto-Regular",
+      "FontSize": 10,
+      "Color": "255, 0, 0, 255",
+      "Text": "ALLO2",
+      "Name": "txtALLO",
+      "Location": "0, 150",
+      "Size": "0, 0",
+      "LayerMask": 2
+    }
+  ]
+}

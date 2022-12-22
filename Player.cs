@@ -226,7 +226,7 @@ namespace Platformer
 
             _isLastGrounded = _isGrounded;
 
-            GameHost.DefaultCamera.Location = nextPosition + OFFSET_CAMERA - new Vector2(GameHost.CenterX, GameHost.CenterY);
+            GameHost.MainCamera.Location = nextPosition + OFFSET_CAMERA - new Vector2(GameHost.CenterX, GameHost.CenterY);
             //GameHost.ExtraCameras[0].Location = nextPosition + OFFSET_CAMERA;
             //GameHost.DefaultCamera.Rotation += 0.01f;
 

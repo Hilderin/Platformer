@@ -19,11 +19,12 @@ namespace Platformer
         /// </summary>
         public override void Load()
         {
-            GameHost.DefaultCamera = new Camera();
-            GameHost.DefaultCamera.Location = new Vector2(GameHost.CenterX, GameHost.CenterY);
+            GameHost.MainCamera = new Camera();
+            GameHost.MainCamera.Location = new Vector2(GameHost.CenterX, GameHost.CenterY);
+            GameHost.MainCamera.LayerMask = Layers.Layer1;
 
             Camera camera2 = new Camera();
-            camera2.LayerMask = (int)Layers.Layer2;
+            camera2.LayerMask = Layers.Layer2;
             GameHost.ExtraCameras.Add(camera2);
 
 
@@ -50,7 +51,7 @@ namespace Platformer
 
             //Text...
             var t = Add(new TextRender("LEVEL 1", "fonts\\Roboto-Bold", 10, new Rectangle(0, 0, GameHost.Width, 25), Color.Red, TextHorizontalAlignment.Center, TextVerticalAlignment.Middle));
-            t.LayerMask = (int)Layers.Layer2;
+            t.LayerMask = Layers.Layer2;
 
             Add(new GameContentContainer("gamecontent\\level1"));
 

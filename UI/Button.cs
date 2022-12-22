@@ -19,6 +19,9 @@ namespace Platformer.UI
         
         public Action OnClick;
 
+        /// <summary>
+        /// Text of the button
+        /// </summary>
         public string Text { get; set; }
 
         /// <summary>

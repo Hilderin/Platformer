@@ -12,6 +12,10 @@ namespace Platformer
 {
     internal class Program
     {
+        /// <summary>
+        /// Must be STAThread for the Designer
+        /// </summary>
+        [STAThread]
         public static void Main()
         {
 
@@ -22,15 +26,17 @@ namespace Platformer
             const int INNER_WIDTH = 480;
             const int INNER_HEIGHT = 270;
 #if DEBUG
+            GameHost.DevelopmentMode = true;
             GameHost.SetResolution(INNER_WIDTH * 2, INNER_HEIGHT * 2, INNER_WIDTH, INNER_HEIGHT, false);
 #else
+            GameHost.DevelopmentMode = false;
             GameHost.SetResolution(INNER_WIDTH * 4, INNER_HEIGHT * 4, INNER_HEIGHT, true);
 #endif
 
             GameHost.NbPixelPerMeter = 60;
 
             //GameHost.Run(new Win());
-            //GameHost.Run(new GameOver());
+            //GameHost.Run(new UI.GameOver());
             //GameHost.Run(new Test());
             //GameHost.Run(new EscapeMenu());
             GameHost.Run(new TestGround());

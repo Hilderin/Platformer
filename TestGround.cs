@@ -52,8 +52,12 @@ namespace Platformer
             var t = Add(new TextRender("LEVEL 1", "fonts\\Roboto-Bold", 10, new Rectangle(0, 0, GameHost.Width, 25), Color.Red, TextHorizontalAlignment.Center, TextVerticalAlignment.Middle));
             t.LayerMask = (int)Layers.Layer2;
 
+            Add(new GameContentContainer("gamecontent\\level1"));
+
             //Player...
             Add(new Player());
+
+            
         }
 
     }

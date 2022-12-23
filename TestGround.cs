@@ -55,7 +55,7 @@ namespace Platformer
             //t.LayerMask = Layers.Layer2;
 
 
-            Add(new GameContentContainer("gamecontent\\level1"));
+            Add(new GameContentContainer("gamecontent\\test_ground"));
 
             //Player...
             Add(new Player()).TranslateTo(new Vector2(100, 0));

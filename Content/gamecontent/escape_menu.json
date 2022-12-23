@@ -1,41 +1,42 @@
 {
-    "Objects":[
+    "Objects": [
         {
             "ClassName": "TextureRender",
-            "TextureName": "escape_menu",
-            "X": 400,
-            "Y": 60
+            "Props": {
+                "TextureName": "escape_menu",
+                "Location": "400, 60"
+            }
         },
         {
             "ClassName": "TextRender",
-            "X": 400,
-            "Width": 400,
-            "Y": 100,
-            "Height": 600,
-            "FontName": "fonts\\Roboto-Bold",
-            "Text": "Platformer",
-            "FontSize": 36,
-            "HorizontalAlignment": "Center",
-            "VerticalAlignment": "Top",
-            "Color": "#000000"
+            "Props": {
+                "Location": "400, 100",
+                "Size": "400, 600",
+                "FontName": "fonts\\Roboto-Bold",
+                "Text": "Platformer",
+                "FontSize": 36,
+                "HorizontalAlignment": "Center",
+                "VerticalAlignment": "Top",
+                "Color": "0,0,0,255"
+            }
         },
         {
             "ClassName": "Button",
-            "X": 475,
-            "Y": 300,
-            "Width": 250,
-            "Height": 70,
-            "Text": "Continue",
-            "Name": "ContinueButton"
+            "Props": {
+                "Location": "475, 300",
+                "Size": "250, 70",
+                "Text": "Continue",
+                "Name": "ContinueButton"
+            }
         },
         {
             "ClassName": "Button",
-            "X": 475,
-            "Y": 420,
-            "Width": 250,
-            "Height": 70,
-            "Text": "Quit",
-            "Name": "QuitButton"
+            "Props": {
+                "Location": "475, 420",
+                "Size": "250, 70",
+                "Text": "Quit",
+                "Name": "QuitButton"
+            }
         }
     ]
 }

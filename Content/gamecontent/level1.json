@@ -2,1086 +2,1224 @@
   "Objects": [
     {
       "ClassName": "TileSetRender",
-      "TileSet": {
-        "Tiles": [
-          [
-            {
-              "Col": 1,
-              "Row": 0
-            },
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 32,
-              "Row": 23
-            },
-            {
-              "Col": 32,
-              "Row": 24
-            },
-            {
-              "Col": 32,
-              "Row": 25
-            },
-            {
-              "Col": 32,
-              "Row": 26
-            }
+      "Props": {
+        "TileSet": {
+          "Tiles": [
+            [
+              {
+                "Col": 1,
+                "Row": 0
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 32,
+                "Row": 23
+              },
+              {
+                "Col": 32,
+                "Row": 24
+              },
+              {
+                "Col": 32,
+                "Row": 25
+              },
+              {
+                "Col": 32,
+                "Row": 26
+              }
+            ],
+            [
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 23
+              },
+              {
+                "Col": 33,
+                "Row": 24
+              },
+              {
+                "Col": 33,
+                "Row": 25
+              },
+              {
+                "Col": 33,
+                "Row": 26
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 35,
+                "Row": 24
+              },
+              {
+                "Col": 32,
+                "Row": 24
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 32,
+                "Row": 24
+              },
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 35,
+                "Row": 24
+              },
+              {
+                "Col": 32,
+                "Row": 24
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 32,
+                "Row": 24
+              },
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 32,
+                "Row": 24
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 32,
+                "Row": 24
+              },
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 32,
+                "Row": 24
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 32,
+                "Row": 24
+              },
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 32,
+                "Row": 24
+              },
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 32,
+                "Row": 24
+              },
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 32,
+                "Row": 24
+              },
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 32,
+                "Row": 24
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 32,
+                "Row": 24
+              },
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              null
+            ],
+            [
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 39,
+                "Row": 14
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 24,
+                "Row": 1
+              },
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 24,
+                "Row": 1
+              },
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              null,
+              null,
+              null,
+              {
+                "Col": 24,
+                "Row": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 24,
+                "Row": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 24,
+                "Row": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 24,
+                "Row": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 24,
+                "Row": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 24,
+                "Row": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 24,
+                "Row": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 24,
+                "Row": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 39,
+                "Row": 14
+              },
+              {
+                "Col": 39,
+                "Row": 14
+              },
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 39,
+                "Row": 14
+              },
+              {
+                "Col": 39,
+                "Row": 14
+              },
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              {
+                "Col": 33,
+                "Row": 16
+              },
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 33,
+                "Row": 16
+              }
+            ]
           ],
-          [
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 23
-            },
-            {
-              "Col": 33,
-              "Row": 24
-            },
-            {
-              "Col": 33,
-              "Row": 25
-            },
-            {
-              "Col": 33,
-              "Row": 26
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 35,
-              "Row": 24
-            },
-            {
-              "Col": 32,
-              "Row": 24
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 32,
-              "Row": 24
-            },
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 35,
-              "Row": 24
-            },
-            {
-              "Col": 32,
-              "Row": 24
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 32,
-              "Row": 24
-            },
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 32,
-              "Row": 24
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 32,
-              "Row": 24
-            },
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 32,
-              "Row": 24
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 32,
-              "Row": 24
-            },
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 32,
-              "Row": 24
-            },
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 32,
-              "Row": 24
-            },
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 32,
-              "Row": 24
-            },
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 32,
-              "Row": 24
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 32,
-              "Row": 24
-            },
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            null
-          ],
-          [
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            null
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 39,
-              "Row": 14
-            },
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 24,
-              "Row": 1
-            },
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 24,
-              "Row": 1
-            },
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            null,
-            null,
-            null,
-            {
-              "Col": 24,
-              "Row": 1
-            },
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 24,
-              "Row": 1
-            },
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 24,
-              "Row": 1
-            },
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 24,
-              "Row": 1
-            },
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 24,
-              "Row": 1
-            },
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 24,
-              "Row": 1
-            },
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 24,
-              "Row": 1
-            },
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 24,
-              "Row": 1
-            },
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 39,
-              "Row": 14
-            },
-            {
-              "Col": 39,
-              "Row": 14
-            },
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 39,
-              "Row": 14
-            },
-            {
-              "Col": 39,
-              "Row": 14
-            },
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            {
-              "Col": 33,
-              "Row": 16
-            },
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 33,
-              "Row": 16
-            }
-          ]
-        ],
-        "TileSize": 16,
-        "TileScreenSize": 16,
-        "TextureName": "tileset\\tiles"
-      },
-      "Name": "CollidableTiles",
-      "Location": "0, 0",
-      "Size": "0, 0",
-      "Collidable": true
+          "TileSize": 16,
+          "TileScreenSize": 16,
+          "TextureName": "tileset\\tiles"
+        },
+        "Name": "CollidableTiles",
+        "Location": "0, 0",
+        "Size": "0, 0",
+        "Collidable": true
+      }
     },
     {
       "ClassName": "TileSetRender",
-      "TileSet": {
-        "Tiles": [
-          null,
-          null,
-          null,
-          [
+      "Props": {
+        "TileSet": {
+          "Tiles": [
+            null,
+            null,
+            null,
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 34,
+                "Row": 23
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 32,
+                "Row": 23
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 34,
+                "Row": 23
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 32,
+                "Row": 23
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 34,
+                "Row": 23
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 34,
+                "Row": 23
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 34,
+                "Row": 23
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 32,
+                "Row": 23
+              }
+            ],
             null,
             null,
             null,
@@ -1090,240 +1228,106 @@
             null,
             null,
             null,
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 36,
+                "Row": 16
+              }
+            ],
             null,
             null,
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "Col": 36,
+                "Row": 16
+              }
+            ],
             null,
-            {
-              "Col": 34,
-              "Row": 23
-            }
+            null,
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
           ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 32,
-              "Row": 23
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 34,
-              "Row": 23
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 32,
-              "Row": 23
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 34,
-              "Row": 23
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 34,
-              "Row": 23
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 34,
-              "Row": 23
-            }
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 32,
-              "Row": 23
-            }
-          ],
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 36,
-              "Row": 16
-            }
-          ],
-          null,
-          null,
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Col": 36,
-              "Row": 16
-            }
-          ],
-          null,
-          null,
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
-        ],
-        "TileSize": 16,
-        "TileScreenSize": 16,
-        "TextureName": "tileset\\tiles"
-      },
-      "Name": "NonCollidableTiles",
-      "LayerDepth": 1.0,
-      "Location": "0, 0",
-      "Size": "0, 0",
-      "ChildIndex": 1
+          "TileSize": 16,
+          "TileScreenSize": 16,
+          "TextureName": "tileset\\tiles"
+        },
+        "Name": "NonCollidableTiles",
+        "LayerDepth": 1.0,
+        "Location": "0, 0",
+        "Size": "0, 0",
+        "ChildIndex": 1
+      }
     }
   ]
 }

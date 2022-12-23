@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Input;
+using Platformer.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,10 +19,11 @@ namespace Platformer
         /// <summary>
         /// Real sizes
         /// </summary>
-        public const int WIDTH = 48;
+        public const int WIDTH = 26;
         public const int HEIGHT = 48;
         public const int JUMP_HEIGHT = 48;
         public readonly Vector2 OFFSET_CAMERA = new Vector2(WIDTH / 2, HEIGHT / 2);
+
 
         /// <summary>
         /// Input control
@@ -104,6 +106,11 @@ namespace Platformer
         /// </summary>
         private Content<SoundEffect> _jumpSfx;
 
+        public static Player Current { get; private set; }
+
+        public int NbLive { get; set; } = 3;
+
+
         /// <summary>
         /// Construtor
         /// </summary>
@@ -116,6 +123,8 @@ namespace Platformer
             _input = new CharacterInput();
             _input.JumpKey = Keys.W;
 
+            Current = this;
+
         }
 
         /// <summary>
@@ -123,6 +132,8 @@ namespace Platformer
         /// </summary>
         public override void Load()
         {
+            this.EnableCollider();
+
             //Rigidbody to calculate physics (Gravity)
             _rigidBody = new RigidBody(this);
             _rigidBody.SpeedMps = 3;
@@ -186,7 +197,7 @@ namespace Platformer
 
 
             //Check for collision...
-            Collision collistion = this.GetCollision(nextPosition, null);
+            Collision collistion = this.GetCollision(nextPosition, Constants.TYPE_COLLIDER_WALLS);
             if (collistion != null)
             {
                 nextPosition = collistion.StopLocation;
@@ -200,6 +211,25 @@ namespace Platformer
                 //Falling...
                 _isGrounded = false;
             }
+
+            //Check collision with enemies...
+            Collision collisionEnemy = this.GetCollision(nextPosition, Constants.TYPE_ENEMIES);
+            if (collisionEnemy != null)
+            {
+                //this.Parent.Add(new GameOver());
+
+                nextPosition = new Vector2(100, 0);
+                this.NbLive--;
+
+                if (this.NbLive <= 0)
+                {
+                    this.Parent.Add(new GameOver());
+                    this.Destroy();
+                    return;
+                }
+
+            }
+
 
             this.TranslateTo(nextPosition);
 

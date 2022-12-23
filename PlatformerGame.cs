@@ -81,6 +81,17 @@ namespace Platformer
             Add(new UI.Win());
         }
 
+
+        /// <summary>
+        /// GameOver
+        /// </summary>
+        public void Gameover()
+        {
+            Level.Paused = true;
+
+            Add(new UI.GameOver());
+        }
+
         /// <summary>
         /// Chargement du contenu
         /// </summary>

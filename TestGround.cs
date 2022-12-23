@@ -20,7 +20,8 @@ namespace Platformer
         public override void Load()
         {
             GameHost.MainCamera = new Camera();
-            GameHost.MainCamera.Location = new Vector2(GameHost.CenterX, GameHost.CenterY);
+            //GameHost.MainCamera.Location = new Vector2(GameHost.CenterX, GameHost.CenterY);
+            GameHost.MainCamera.Location = new Vector2(-50, 50);
             GameHost.MainCamera.LayerMask = Layers.Layer1;
 
             Camera camera2 = new Camera();
@@ -36,29 +37,33 @@ namespace Platformer
             //Add(new TextureRender("animations\\character_run_right"));
             //Add(new SpriteAnimationRender("animations\\character_run_right")).ResizeTo(96, 96);
 
-            //Floor...
-            int floorY = GameHost.Height - 20;
-            Add(new TextureRender("pixel", new Rectangle(-1000, floorY, 2000, 30)))
-                .EnableCollider();
+            ////Floor...
+            //int floorY = GameHost.Height - 20;
+            //Add(new TextureRender("pixel", new Rectangle(-1000, floorY, 2000, 30)))
+            //    .EnableCollider();
 
-            //Obstacle
-            Add(new TextureRender("pixel", new Rectangle(300, floorY - Player.HEIGHT, Player.HEIGHT, Player.HEIGHT), Color.Blue))
-                .EnableCollider();
+            ////Obstacle
+            //Add(new TextureRender("pixel", new Rectangle(300, floorY - Player.HEIGHT, Player.HEIGHT, Player.HEIGHT), Color.Blue))
+            //    .EnableCollider();
 
-            //Obstacle
-            Add(new TextureRender("pixel", new Rectangle(100, floorY - Player.HEIGHT - 10, 100, 10), Color.Blue))
-                .EnableCollider();
+            ////Obstacle
+            //Add(new TextureRender("pixel", new Rectangle(100, floorY - Player.HEIGHT - 10, 100, 10), Color.Blue))
+            //    .EnableCollider();
 
             //Text...
-            var t = Add(new TextRender("LEVEL 1", "fonts\\Roboto-Bold", 10, new Rectangle(0, 0, GameHost.Width, 25), Color.Red, TextHorizontalAlignment.Center, TextVerticalAlignment.Middle));
-            t.LayerMask = Layers.Layer2;
+            //var t = Add(new TextRender("LEVEL 1", "fonts\\Roboto-Bold", 10, new Rectangle(0, 0, GameHost.Width, 25), Color.Red, TextHorizontalAlignment.Center, TextVerticalAlignment.Middle));
+            //t.LayerMask = Layers.Layer2;
+
 
             Add(new GameContentContainer("gamecontent\\level1"));
 
             //Player...
-            Add(new Player());
+            Add(new Player()).TranslateTo(new Vector2(100, 0));
 
-            
+            //Enemy
+            Add(new Enemy()).TranslateTo(new Vector2(0, 228));
+
+            Add(new UI.HUD());
         }
 
     }

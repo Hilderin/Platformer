@@ -11,22 +11,19 @@ namespace Platformer.UI
     public class HUD: GameObject
     {
         /// <summary>
-        /// Text où s'affiche le nombre de balls
+        /// Text for number of lives
         /// </summary>
         private TextRender _textNbLive;
 
         /// <summary>
-        /// Chargement du contenu
+        /// Loading
         /// </summary>
         public override void Load()
         {
-            const int borderX = 60;
-            const int borderWidth = 150;
+            
+            Add(new GameContentContainer("gamecontent\\hud"));
 
-            //Border for nb lives
-            var borderNbLive = Add(new TextureRender("border", new Rectangle(borderX, 150, borderWidth, 50)));
-            _textNbLive = Add(new TextRender(String.Empty, "fonts\\Roboto-Bold", 22, borderNbLive.Bounds, Color.DarkRed, TextHorizontalAlignment.Center, TextVerticalAlignment.Middle));
-
+            _textNbLive = Find<TextRender>("NbLife");
         }
 
         /// <summary>
@@ -34,7 +31,8 @@ namespace Platformer.UI
         /// </summary>
         public override void Update()
         {
-            _textNbLive.Text = PlatformerGame.Instance.NbLive.ToString() + " UP";
+            if(Player.Current != null)
+                _textNbLive.Text = Player.Current.NbLive.ToString() + " UP";
         }
 
     }

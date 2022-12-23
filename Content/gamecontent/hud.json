@@ -1,0 +1,16 @@
+{
+  "Objects": [
+    {
+      "ClassName": "TextRender",
+      "RotationOrigin": "0, 0",
+      "FontName": "fonts\\Roboto-Bold",
+      "FontSize": 14,
+      "Color": "255, 255, 255, 255",
+      "Text": "LIVE: 3",
+      "Name": "NbLife",
+      "Location": "0, 0",
+      "Size": "0, 0",
+      "LayerMask": 2
+    }
+  ]
+}

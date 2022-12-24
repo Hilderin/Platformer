@@ -258,6 +258,7 @@ namespace Platformer
 
             GameHost.MainCamera.Location = nextPosition + OFFSET_CAMERA - new Vector2(GameHost.CenterX, GameHost.CenterY);
             //GameHost.ExtraCameras[0].Location = nextPosition + OFFSET_CAMERA;
+            GameHost.ExtraCameras[1].Location = GameHost.MainCamera.Location;
             //GameHost.DefaultCamera.Rotation += 0.01f;
 
             //if (_input.IsLeft)

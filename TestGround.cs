@@ -37,10 +37,10 @@ namespace Platformer
             //Add(new TextureRender("animations\\character_run_right"));
             //Add(new SpriteAnimationRender("animations\\character_run_right")).ResizeTo(96, 96);
 
-            //Floor...
-            int floorY = GameHost.Height - 20;
-            Add(new TextureRender("pixel", new Rectangle(-1000, floorY, 2000, 30)))
-                .EnableCollider();
+            ////Floor...
+            //int floorY = GameHost.Height - 20;
+            //Add(new TextureRender("pixel", new Rectangle(-1000, floorY, 2000, 30)))
+            //    .EnableCollider();
 
             ////Obstacle
             //Add(new TextureRender("pixel", new Rectangle(300, floorY - Player.HEIGHT, Player.HEIGHT, Player.HEIGHT), Color.Blue))

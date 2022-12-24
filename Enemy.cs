@@ -70,7 +70,7 @@ namespace Platformer
                     else
                         postionToCheckTheEmptinessOfTheVoid = new Vector2(nextPosition.X + this.Width + 1, nextPosition.Y + this.Height + 1);
 
-                    if (this.GetCollision(postionToCheckTheEmptinessOfTheVoid, Vector2.One, null) == null)
+                    if (this.GetCollision(postionToCheckTheEmptinessOfTheVoid, Vector2.One, Constants.TYPE_COLLIDER_WALLS) == null)
                     {
                         _rigidbody.IsMovingRight = !_rigidbody.IsMovingRight;
                         _rigidbody.IsMovingLeft = !_rigidbody.IsMovingLeft;

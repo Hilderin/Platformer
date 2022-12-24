@@ -23,6 +23,9 @@ namespace Platformer.UI
             
             Add(new GameContentContainer("gamecontent\\hud"));
 
+            var fps = Add(new FPSRender("fonts\\Roboto-Bold", 12, Color.Yellow));
+            fps.LayerMask = Layers.Layer2;
+
             _textNbLive = Find<TextRender>("NbLife");
         }
 

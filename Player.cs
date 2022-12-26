@@ -21,7 +21,7 @@ namespace Platformer
         /// </summary>
         public const int WIDTH = 26;
         public const int HEIGHT = 48;
-        public const int JUMP_HEIGHT = 48;
+        public const int JUMP_HEIGHT = 50;
         public readonly Vector2 OFFSET_CAMERA = new Vector2(WIDTH / 2, HEIGHT / 2);
 
 

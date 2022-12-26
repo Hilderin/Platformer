@@ -30,7 +30,7 @@ namespace Platformer
             GameHost.SetResolution(INNER_WIDTH * 2, INNER_HEIGHT * 2, INNER_WIDTH, INNER_HEIGHT, false);
 #else
             GameHost.DevelopmentMode = false;
-            GameHost.SetResolution(INNER_WIDTH * 4, INNER_HEIGHT * 4, INNER_HEIGHT, true);
+            GameHost.SetResolution(INNER_WIDTH * 4, INNER_HEIGHT * 4, INNER_WIDTH, INNER_HEIGHT, true);
 #endif
 
             GameHost.NbPixelPerMeter = 60;

@@ -24,8 +24,8 @@ namespace Platformer
             GameHost.MainCamera.Location = new Vector2(-50, 50);
             GameHost.MainCamera.LayerMask = Layers.Layer1;
 
-            GameHost.MainCamera.ViewLocation = new Point(10, 10);
-            GameHost.MainCamera.Size = new Point(GameHost.Width - 20, GameHost.Height - 20);
+            //GameHost.MainCamera.ViewLocation = new Point(10, 10);
+            //GameHost.MainCamera.Size = new Point(GameHost.Width - 20, GameHost.Height - 20);
 
             GameHost.ExtraCameras.Clear();
 
@@ -72,12 +72,14 @@ namespace Platformer
 
 
             Add(new GameContentContainer("gamecontent\\test_ground"));
+            //Add(new GameContentContainer("gamecontent\\test_ground_no_enemy"));
+            
 
             //Player...
             Add(new Player()).TranslateTo(new Vector2(100, 0));
 
-            //Enemy
-            Add(new Enemy()).TranslateTo(new Vector2(0, 228));
+            ////Enemy
+            //Add(new Enemy()).TranslateTo(new Vector2(0, 228));
 
             Add(new UI.HUD());
 

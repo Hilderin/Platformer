@@ -1082,13 +1082,6 @@
           "TextureName": "tileset\\tiles"
         },
         "Name": "Collidables",
-        "Depth": 0.0,
-        "Enabled": true,
-        "Paused": false,
-        "Visible": true,
-        "Location": "0, 0",
-        "Size": "0, 0",
-        "LayerMask": 1,
         "Collidable": true
       },
       "ClassName": "TileSetRender"
@@ -1128,16 +1121,1954 @@
           "TextureName": "tileset\\tiles"
         },
         "Name": "NonCollidables",
-        "Depth": -1.0,
-        "Enabled": true,
-        "Paused": false,
-        "Visible": true,
-        "Location": "0, 0",
-        "Size": "0, 0",
-        "LayerMask": 1,
-        "Collidable": false
+        "Depth": -1.0
       },
       "ClassName": "TileSetRender"
+    },
+    {
+      "Props": {
+        "FontName": "Roboto-Regular",
+        "FontSize": 12,
+        "Color": "255, 255, 0, 255",
+        "Location": "-119, 37"
+      },
+      "ClassName": "DebugInfoRender"
+    },
+    {
+      "Props": {
+        "Location": "24.00002, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "46, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "55.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "57.99999, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "16, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "34.00003, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "42.00005, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "17.99997, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "55.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "25.99999, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "25.99999, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "16, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "32, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "16, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "46, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "51.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "62, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "62, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "62, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "62, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "62, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "66, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "55.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "51.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "46, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "16, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "28.00002, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "16, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "28.00002, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "16, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "62, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "17.99997, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "34.00003, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "50.00006, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "50.00006, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "16, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "51.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "16, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "16, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "51.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "55.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "55.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "55.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "55.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "55.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "55.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "66, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "57.99999, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "53.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "271.409, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "271.409, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "271.345, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "270.2764, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "272.6796, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "272.6796, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "278.4068, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "278.7271, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "275.758, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "272.3069, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "274.3341, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "275.76, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "270.125, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "274.354, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "270.3111, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "270.5851, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "278.501, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "275.0165, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "275.8036, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "270.2989, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "274.6718, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "274.2219, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "104.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "106.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "112.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "106.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "128.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "126.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "112.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "162.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "112.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "146.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "112.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "80.00009, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "98.00009, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "146.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "104.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "94.00009, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "80.00009, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "70.00009, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "20.00001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "16, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "50.00006, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "98.00009, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "122.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "104.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "50.00006, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "112.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "138.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "86.00009, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "50.00006, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "104.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "138.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "146.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "126.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "42.00005, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "17.99997, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "66, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "55.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "62, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "55.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "20.00001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "46.00006, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "16, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "57.99999, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "57.99999, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "94.00009, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "98.00009, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "50.00006, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "278.4267, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "270.5134, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "270.7361, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "274.8815, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "270.7772, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "278.7645, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "272.231, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "278.4267, 148",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "16, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "250, 196",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "126.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "42.00005, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "32, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "46, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "51.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "46, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "16, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "50.00006, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "16, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "57.99999, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "51.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "55.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "39.99998, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "34.00003, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "208.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "206.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "190.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "176.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "198.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "212, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "202, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "200, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "208.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "202.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "182.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "126.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "130.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "160.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "186.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "214.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "198.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "164.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "210, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "190.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "154.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "162.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "124.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "138.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "198.0001, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "208, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "196, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "218, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "92, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "108, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "120, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "136, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "154, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "182, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "190, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "194, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "188, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "168, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "146, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "138, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "134, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "118, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "88, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "59.99999, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "46, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "46, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "57.99999, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "82, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "108, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "126, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "144, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "170, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "188, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "202, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "206, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "Location": "206, 228",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
     }
   ]
 }

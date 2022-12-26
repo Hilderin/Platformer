@@ -29,7 +29,9 @@ namespace Platformer.UI
         /// </summary>
         public Button()
         {
-
+            //Default size...
+            this.Width = 100;
+            this.Height = 20;
         }
 
         /// <summary>

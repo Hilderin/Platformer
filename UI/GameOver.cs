@@ -20,8 +20,12 @@ namespace Platformer.UI
         /// </summary>
         public override void Load()
         {
-            Add(new TextRender("GAME OVER", "fonts\\Roboto-Bold", 60, GameHost.Rectangle, Color.DarkRed, TextHorizontalAlignment.Center, TextVerticalAlignment.Middle));
-            Add(new Button("RETRY", new Rectangle(GameHost.CenterX - 100, GameHost.CenterY + 200, 200, 60), Retry));
+            this.Depth = -10000;
+
+            //Add(new TextRender("GAME OVER", "fonts\\Roboto-Bold", 60, GameHost.Rectangle, Color.DarkRed, TextHorizontalAlignment.Center, TextVerticalAlignment.Middle));
+            //Add(new Button("RETRY", new Rectangle(GameHost.CenterX - 100, GameHost.CenterY + 200, 200, 60), Retry));
+
+            Add(new GameContentContainer("gamecontent\\gameover"));
 
             SoundEffectPlayer.PlayStatic("sfx\\gameover");
 
@@ -34,9 +38,17 @@ namespace Platformer.UI
         /// <summary>
         /// Restart the game
         /// </summary>
-        public void Retry()
+        public void Retry_OnClick()
         {
             PlatformerHost.RestartLevel();
+        }
+
+        /// <summary>
+        /// Restart the game
+        /// </summary>
+        public void Quit_OnClick()
+        {
+            PlatformerHost.Quit();
         }
     }
 }

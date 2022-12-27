@@ -1,9 +1,11 @@
 ﻿using FNAEngine2D;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,7 +18,7 @@ namespace Platformer.UI
         private TextureRender _downRenderer;
         private TextRender _textRender;
 
-        
+        [JsonIgnore]
         public Action OnClick;
 
         /// <summary>
@@ -56,7 +58,7 @@ namespace Platformer.UI
             _downRenderer.Hide();
 
 
-            _textRender = Add(new TextRender(Text, "fonts\\Roboto-Bold", 22, this.Bounds, Color.White, TextHorizontalAlignment.Center, TextVerticalAlignment.Middle));
+            _textRender = Add(new TextRender(Text, "fonts\\Roboto-Bold", 12, this.Bounds, Color.White, TextHorizontalAlignment.Center, TextVerticalAlignment.Middle));
 
 
         }
@@ -100,13 +102,36 @@ namespace Platformer.UI
             if (action == MouseAction.LeftButtonClicked)
             {
                 //Clicked!
-                OnClick?.Invoke();
+                InvokeOnClick();
             }
 
 
         }
 
-
+        /// <summary>
+        /// Invoke the click...
+        /// </summary>
+        public void InvokeOnClick()
+        {
+            //We have an onclick set??
+            if (OnClick != null)
+            {
+                OnClick();
+            }
+            else
+            {
+                //We will try to find the method...                
+                GameObject parent = this.Parent;
+                if (parent != null && parent is GameContentContainer)
+                    parent = parent.Parent;
+                if (parent != null)
+                {
+                    MethodInfo method = parent.GetType().GetMethod(this.Name + "_OnClick");
+                    if (method != null)
+                        method.Invoke(parent, null);
+                }
+            }
+        }
 
     }
 }

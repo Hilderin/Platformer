@@ -1,0 +1,39 @@
+{
+  "Objects": [
+    {
+      "Props": {
+        "FontSize": 20,
+        "HorizontalAlignment": 2,
+        "VerticalAlignment": 2,
+        "Color": "255, 0, 0, 255",
+        "Text": "GAME OVER",
+        "Depth": -10000.0,
+        "Size": "480, 200",
+        "LayerMask": 2
+      },
+      "ClassName": "TextRender"
+    },
+    {
+      "Props": {
+        "Text": "Retry",
+        "Name": "Retry",
+        "Depth": -10000.0,
+        "Location": "190, 154",
+        "Size": "100, 20",
+        "LayerMask": 2
+      },
+      "ClassName": "Button"
+    },
+    {
+      "Props": {
+        "Text": "Quit",
+        "Name": "Quit",
+        "Depth": -10000.0,
+        "Location": "190, 186",
+        "Size": "100, 20",
+        "LayerMask": 2
+      },
+      "ClassName": "Button"
+    }
+  ]
+}

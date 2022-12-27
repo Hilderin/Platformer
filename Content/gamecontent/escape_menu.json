@@ -1,42 +1,60 @@
 {
-    "Objects": [
-        {
-            "ClassName": "TextureRender",
-            "Props": {
-                "TextureName": "escape_menu",
-                "Location": "400, 60"
-            }
+  "Objects": [
+    {
+      "Props": {
+        "TextureName": "escape_menu",
+        "Color": "255, 255, 255, 255",
+        "Location": "100, 10",
+        "Size": "270, 250",
+        "LayerMask": 2
+      },
+      "ClassName": "TextureRender"
+    },
+    {
+      "Props": {
+        "FontName": "fonts\\Roboto-Bold",
+        "FontSize": 22,
+        "HorizontalAlignment": 2,
+        "VerticalAlignment": 2,
+        "Color": "0, 0, 0, 255",
+        "Text": "Platformer",
+        "Location": "100, 20",
+        "Size": "270, 50",
+        "LayerMask": 2
+      },
+      "ClassName": "TextRender"
+    },
+    {
+      "Props": {
+        "Text": "Continue",
+        "Name": "ContinueButton",
+        "Location": "160, 100",
+        "Size": "150, 40",
+        "LayerMask": 2
+      },
+      "ClassName": "Button"
+    },
+    {
+      "Props": {
+        "OnClick": {
+          "Method": {
+            "Name": "Quit",
+            "AssemblyName": "Platformer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "ClassName": "Platformer.UI.EscapeMenu",
+            "Signature": "Void Quit()",
+            "Signature2": "System.Void Quit()",
+            "MemberType": 8,
+            "GenericArguments": null
+          },
+          "Target": {}
         },
-        {
-            "ClassName": "TextRender",
-            "Props": {
-                "Location": "400, 100",
-                "Size": "400, 600",
-                "FontName": "fonts\\Roboto-Bold",
-                "Text": "Platformer",
-                "FontSize": 36,
-                "HorizontalAlignment": "Center",
-                "VerticalAlignment": "Top",
-                "Color": "0,0,0,255"
-            }
-        },
-        {
-            "ClassName": "Button",
-            "Props": {
-                "Location": "475, 300",
-                "Size": "250, 70",
-                "Text": "Continue",
-                "Name": "ContinueButton"
-            }
-        },
-        {
-            "ClassName": "Button",
-            "Props": {
-                "Location": "475, 420",
-                "Size": "250, 70",
-                "Text": "Quit",
-                "Name": "QuitButton"
-            }
-        }
-    ]
+        "Text": "Quit",
+        "Name": "QuitButton",
+        "Location": "160, 150",
+        "Size": "150, 40",
+        "LayerMask": 2
+      },
+      "ClassName": "Button"
+    }
+  ]
 }

@@ -17,26 +17,14 @@ namespace Platformer.UI
         /// </summary>
         public override void Load()
         {
-            
+            this.Depth = -10000;
+
             GameContentManager.Apply(this, "gamecontent\\escape_menu");
 
             Find<Button>("ContinueButton").OnClick = Continue;
             Find<Button>("QuitButton").OnClick = Quit;
 
             MouseManager.ShowMouse();
-
-        }
-
-        /// <summary>
-        /// Update of PlatformerGame
-        /// </summary>
-        public override void Update()
-        {
-
-            if (Input.IsKeyPressed(Keys.Escape))
-            {
-                Continue();
-            }
 
         }
 

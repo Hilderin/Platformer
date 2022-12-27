@@ -25,11 +25,12 @@ namespace Platformer.UI
         /// </summary>
         public override void Load()
         {
-            
+            this.Depth = -1000;
+
             Add(new GameContentContainer("gamecontent\\hud"));
 
-            Add(new FPSRender("fonts\\Roboto-Bold", 12, Color.Yellow))
-                .SetLayerMask(PlatformerHost.UICamera.LayerMask);
+            //Add(new FPSRender("fonts\\Roboto-Bold", 12, Color.Yellow))
+            //    .SetLayerMask(PlatformerHost.UICamera.LayerMask);
 
             _textNbLive = Find<TextRender>("Health");
         }
@@ -45,7 +46,10 @@ namespace Platformer.UI
                 if (_lastHealth != PlatformerHost.Player.Health)
                 {
                     _lastHealth = PlatformerHost.Player.Health;
-                    _textNbLive.Text = "HEALTH: " + _lastHealth.ToString();
+                    int health = _lastHealth;
+                    if (health < 0)
+                        health = 0;
+                    _textNbLive.Text = "HEALTH: " + health.ToString();
                 }
             }
         }

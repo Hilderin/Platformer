@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -83,7 +84,8 @@ namespace Platformer
         /// </summary>
         public static void Continue()
         {
-            Root.Continue();
+            if (Root != null)
+                Root.Continue();
         }
 
         /// <summary>
@@ -91,9 +93,18 @@ namespace Platformer
         /// </summary>
         public static void RestartLevel()
         {
-            Root.RestartLevel();
+            if(Root != null)
+                Root.RestartLevel();
         }
 
+        /// <summary>
+        /// Player lost
+        /// </summary>
+        public static void GameOver()
+        {
+            if (Root != null)
+                Root.GameOver();
+        }
 
         /// <summary>
         /// Quit the game

@@ -157,6 +157,9 @@ namespace Platformer
         /// </summary>
         public override void Update()
         {
+
+            
+
             //Movement...
             _rigidBody.IsMovingLeft = _input.IsLeft;
             _rigidBody.IsMovingRight = _input.IsRight;
@@ -185,18 +188,25 @@ namespace Platformer
             Collision collisionEnemy = this.GetCollision(nextPosition, Constants.TYPE_ENEMIES);
             if (collisionEnemy != null)
             {
-                //this.Parent.Add(new GameOver());
-
-                //nextPosition = new Vector2(100, 0);
                 this.Health--;
+            }
 
-                if (this.Health <= 0)
+            //Check collision with obstacles...
+            Collision collisionObstacles = this.GetCollision(nextPosition, Constants.TYPE_OBSTACLES);
+            if (collisionObstacles != null)
+            {
+                foreach (GameObject obstacle in collisionObstacles.CollidesWith)
                 {
-                    this.Parent.Add(new GameOver());
-                    this.Destroy();
-                    return;
+                    ((IObstacle)obstacle).Hit(this);
                 }
+            }
 
+
+            if (this.Health < 0)
+            {
+                //We are dead!
+                PlatformerHost.GameOver();
+                return;
             }
 
 

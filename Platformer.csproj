@@ -50,7 +50,8 @@
     <Compile Include="CharacterAnimations.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Enemy.cs" />
-    <Compile Include="Obstacle.cs" />
+    <Compile Include="Lava.cs" />
+    <Compile Include="IObstacle.cs" />
     <Compile Include="PlatformerHost.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerStart.cs" />

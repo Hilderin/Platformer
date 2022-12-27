@@ -66,18 +66,23 @@ namespace Platformer
         {
             Level.Paused = true;
 
-            Add(new UI.Win());
+            if (Find<UI.Win>() == null)
+                Add(new UI.Win());
         }
 
 
         /// <summary>
         /// GameOver
         /// </summary>
-        public void Gameover()
+        public void GameOver()
         {
             Level.Paused = true;
 
-            Add(new UI.GameOver());
+            if(PlatformerHost.Player != null)
+                PlatformerHost.Player.Destroy();
+
+            if(Find<UI.GameOver>() == null)
+                Add(new UI.GameOver()); 
         }
 
         /// <summary>
@@ -98,9 +103,15 @@ namespace Platformer
 
             if (Input.IsKeyPressed(Keys.Escape))
             {
-                Level.Paused = true;
-
-                Add(new UI.EscapeMenu());
+                if (Find<UI.EscapeMenu>() == null)
+                {
+                    Level.Paused = true;
+                    Add(new UI.EscapeMenu());
+                }
+                else
+                {
+                    Continue();
+                }
             }
             
         }

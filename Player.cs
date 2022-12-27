@@ -35,36 +35,6 @@ namespace Platformer
         /// </summary>
         private RigidBody _rigidBody;
 
-        /// <summary>
-        /// Idle animation
-        /// </summary>
-        private SpriteAnimationRender _idleAnimation;
-
-        /// <summary>
-        /// Running left animation
-        /// </summary>
-        private SpriteAnimationRender _runLeftAnimation;
-
-        /// <summary>
-        /// Running right animation
-        /// </summary>
-        private SpriteAnimationRender _runRightAnimation;
-
-        /// <summary>
-        /// jumping left animation
-        /// </summary>
-        private SpriteAnimationRender _jumpLeftAnimation;
-
-        /// <summary>
-        /// jumping right animation
-        /// </summary>
-        private SpriteAnimationRender _jumpRightAnimation;
-
-
-        /// <summary>
-        /// Current animation
-        /// </summary>
-        private SpriteAnimationRender _currentAnimation;
 
         /// <summary>
         /// Indicate if the player is grounded
@@ -80,6 +50,16 @@ namespace Platformer
         /// Last time was going right
         /// </summary>
         private bool _lastMoveWasRight = true;
+
+        /// <summary>
+        /// Charactor animator
+        /// </summary>
+        private SpriteAnimator<CharacterAnimations> _charactorAnimator;
+
+        /// <summary>
+        /// Fire animator
+        /// </summary>
+        private SpriteAnimator<FireAnimations> _fireAnimator;
 
         /// <summary>
         /// Player for foot steps
@@ -106,9 +86,15 @@ namespace Platformer
         /// </summary>
         private Content<SoundEffect> _jumpSfx;
 
-        public static Player Current { get; private set; }
+        /// <summary>
+        /// Fire sound effect player
+        /// </summary>
+        private Content<SoundEffect> _fireSfx;
 
-        public int NbLive { get; set; } = 3;
+        /// <summary>
+        /// Health
+        /// </summary>
+        public int Health { get; set; } = 100;
 
 
         /// <summary>
@@ -122,9 +108,7 @@ namespace Platformer
             //Setup the inputs...
             _input = new CharacterInput();
             _input.JumpKey = Keys.W;
-
-            Current = this;
-
+            _input.FireKey = Keys.Space;
         }
 
         /// <summary>
@@ -138,31 +122,11 @@ namespace Platformer
             _rigidBody = new RigidBody(this);
             _rigidBody.SpeedMps = 3;
 
-
-            //Idle animation...
-            _idleAnimation = Add(new SpriteAnimationRender("animations\\character_idle"));
-            _idleAnimation.Bounds = this.Bounds.CenterBottom(_idleAnimation.Width, _idleAnimation.Height);
-            _currentAnimation = _idleAnimation;
-
-            //Running left animation...
-            _runLeftAnimation = Add(new SpriteAnimationRender("animations\\character_run_left"));
-            _runLeftAnimation.Bounds = this.Bounds.CenterBottom(_runLeftAnimation.Width, _runLeftAnimation.Height);
-            _runLeftAnimation.Enabled = false;
-
-            //Running left animation...
-            _runRightAnimation = Add(new SpriteAnimationRender("animations\\character_run_right"));
-            _runRightAnimation.Bounds = this.Bounds.CenterBottom(_runRightAnimation.Width, _runRightAnimation.Height);
-            _runRightAnimation.Enabled = false;
-
-            //jumping left animation...
-            _jumpLeftAnimation = Add(new SpriteAnimationRender("animations\\character_jump_left"));
-            _jumpLeftAnimation.Bounds = this.Bounds.CenterBottom(_jumpLeftAnimation.Width, _jumpLeftAnimation.Height);
-            _jumpLeftAnimation.Enabled = false;
-
-            //jumping left animation...
-            _jumpRightAnimation = Add(new SpriteAnimationRender("animations\\character_jump_right"));
-            _jumpRightAnimation.Bounds = this.Bounds.CenterBottom(_jumpRightAnimation.Width, _jumpRightAnimation.Height);
-            _jumpRightAnimation.Enabled = false;
+            //Animator...
+            _charactorAnimator = Add(new SpriteAnimator<CharacterAnimations>("animations"));
+            _fireAnimator = Add(new SpriteAnimator<FireAnimations>("animations"));
+            _fireAnimator.Loop = false;
+            _fireAnimator.PlayOnStart = false;
 
 
             //Footsteps........
@@ -170,8 +134,10 @@ namespace Platformer
             _footstepPlayer.Volume = 0.2f;
             _footstepPlayer.MinimumRateSeconds = 0.5f;
 
-            _footstepSfx = _footstepPlayer.GetContent("sfx\\footsteps\\metal");
-            _landSfx = _footstepPlayer.GetContent("sfx\\footsteps\\metal");
+            //_footstepSfx = _footstepPlayer.GetContent("sfx\\footsteps\\metal");
+            //_landSfx = _footstepPlayer.GetContent("sfx\\footsteps\\metal");
+            _footstepSfx = _footstepPlayer.GetContent("sfx\\footsteps\\dirt");
+            _landSfx = _footstepPlayer.GetContent("sfx\\footsteps\\dirt");
 
 
             //Jump...
@@ -179,6 +145,9 @@ namespace Platformer
             _jumpPlayer.Volume = 0.4f;
             _jumpSfx = _footstepPlayer.GetContent("sfx\\footsteps\\jump");
 
+
+            //Fire
+            _fireSfx = SoundManager.GetSfx("sfx\\fire");
 
 
         }
@@ -218,10 +187,10 @@ namespace Platformer
             {
                 //this.Parent.Add(new GameOver());
 
-                nextPosition = new Vector2(100, 0);
-                this.NbLive--;
+                //nextPosition = new Vector2(100, 0);
+                this.Health--;
 
-                if (this.NbLive <= 0)
+                if (this.Health <= 0)
                 {
                     this.Parent.Add(new GameOver());
                     this.Destroy();
@@ -243,6 +212,14 @@ namespace Platformer
                 _rigidBody.AddForce(new Vector2(0, -JUMP_HEIGHT), _rigidBody.SpeedMps * 1.5f);
             }
 
+            //-------------------
+            //Firing...
+            if (_isGrounded && _input.IsNewFire)
+            {
+                //Firing...
+                Fire();
+            }
+
 
             //Updating du animation...
             UpdateAnimation();
@@ -256,66 +233,84 @@ namespace Platformer
 
             _isLastGrounded = _isGrounded;
 
-            GameHost.MainCamera.Location = nextPosition + OFFSET_CAMERA - new Vector2(GameHost.CenterX, GameHost.CenterY);
-            //GameHost.ExtraCameras[0].Location = nextPosition + OFFSET_CAMERA;
-            GameHost.ExtraCameras[1].Location = GameHost.MainCamera.Location;
-            //GameHost.DefaultCamera.Rotation += 0.01f;
+            PlatformerHost.MainCamera.Location = nextPosition + OFFSET_CAMERA - new Vector2(GameHost.CenterX, GameHost.CenterY);
+            
+            if(PlatformerHost.MinimapCamera != null)
+                PlatformerHost.MinimapCamera.Location = GameHost.MainCamera.Location;
 
-            //if (_input.IsLeft)
-            //    GameHost.DefaultCamera.Location = GameHost.DefaultCamera.Location.AddX(-10);
-            //else if (_input.IsRight)
-            //    GameHost.DefaultCamera.Location = GameHost.DefaultCamera.Location.AddX(10);
-            //if (_input.IsUp)
-            //    GameHost.DefaultCamera.Location = GameHost.DefaultCamera.Location.AddY(-10);
-            //else if (_input.IsDown)
-            //    GameHost.DefaultCamera.Location = GameHost.DefaultCamera.Location.AddY(10);
         }
 
+        /// <summary>
+        /// Fire a bullet
+        /// </summary>
+        private void Fire()
+        {
+            Bullet bullet = Add(new Bullet());
+
+            if (_lastMoveWasRight)
+            {
+                bullet.Location = new Vector2(this.Bounds.Right - 3, this.Location.Y + 18);
+                bullet.Direction = new Vector2(1, 0);
+                _fireAnimator.Play(FireAnimations.fire_right);
+            }
+            else
+            {
+                bullet.Location = new Vector2(this.Location.X + 3, this.Location.Y + 18);
+                bullet.Direction = new Vector2(-1, 0);
+                _fireAnimator.Play(FireAnimations.fire_left);
+            }
+            bullet.SpeedMps = 10;
+            SoundManager.PlaySfx(_fireSfx);
+            
+
+        }
 
         /// <summary>
         /// Be sure du active que right animation...
         /// </summary>
         private void UpdateAnimation()
         {
-            SpriteAnimationRender animationToUse;
+            CharacterAnimations animationToUse;
 
-            
+
             if (_input.IsLeft)
             {
                 //Left....
-                animationToUse = _runLeftAnimation;
+                animationToUse = CharacterAnimations.character_run_left;
                 _lastMoveWasRight = false;
             }
             else if (_input.IsRight)
             {
                 //Right....
-                animationToUse = _runRightAnimation;
+                animationToUse = CharacterAnimations.character_run_right;
                 _lastMoveWasRight = true;
+            }
+            else if (_lastMoveWasRight)
+            {
+                animationToUse = CharacterAnimations.character_idle_right;
             }
             else
             {
-                animationToUse = _idleAnimation;
+                animationToUse = CharacterAnimations.character_idle_left;
             }
 
             if (!_isGrounded)
             {
                 //Jumping or falling...
                 if (_lastMoveWasRight)
-                    animationToUse = _jumpRightAnimation;
+                    animationToUse = CharacterAnimations.character_jump_right;
                 else
-                    animationToUse = _jumpLeftAnimation;
+                    animationToUse = CharacterAnimations.character_jump_left;
             }
 
-            if (animationToUse != _currentAnimation)
+            if (animationToUse != _charactorAnimator.CurrentAnimation)
             {
                 //We change animation...
-                _currentAnimation.Enabled = false;
-                _currentAnimation = animationToUse;
-                animationToUse.Restart();
-                animationToUse.Enabled = true;
+                _charactorAnimator.Play(animationToUse);
+
+                //Stopping firing animation to be sure to not display crap on screen on the wrong side of the player
+                _fireAnimator.Stop();
             }
-
-
 
 
         }

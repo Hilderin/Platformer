@@ -21,5 +21,6 @@ namespace Platformer
         /// Types of the enemies
         /// </summary>
         public static readonly Type[] TYPE_ENEMIES = new Type[] { typeof(Enemy) };
+
     }
 }

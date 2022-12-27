@@ -45,10 +45,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bullet.cs" />
+    <Compile Include="FireAnimations.cs" />
+    <Compile Include="CharacterAnimations.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Obstacle.cs" />
+    <Compile Include="PlatformerHost.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="PlayerStart.cs" />
+    <Compile Include="SoundManager.cs" />
     <Compile Include="TestGround.cs" />
     <Compile Include="UI\Button.cs" />
     <Compile Include="UI\EscapeMenu.cs" />

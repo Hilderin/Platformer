@@ -36,8 +36,7 @@ namespace Platformer.UI
         /// </summary>
         public void Retry()
         {
-            if(PlatformerGame.Instance != null)
-                PlatformerGame.Instance.Restart();
+            PlatformerHost.RestartLevel();
         }
     }
 }

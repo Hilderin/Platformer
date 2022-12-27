@@ -19,30 +19,9 @@ namespace Platformer
         /// </summary>
         public override void Load()
         {
-            GameHost.MainCamera = new Camera();
-            //GameHost.MainCamera.Location = new Vector2(GameHost.CenterX, GameHost.CenterY);
-            GameHost.MainCamera.Location = new Vector2(-50, 50);
-            GameHost.MainCamera.LayerMask = Layers.Layer1;
+            
 
-            //GameHost.MainCamera.ViewLocation = new Point(10, 10);
-            //GameHost.MainCamera.Size = new Point(GameHost.Width - 20, GameHost.Height - 20);
-
-            GameHost.ExtraCameras.Clear();
-
-            Camera camera2 = new Camera();
-            camera2.LayerMask = Layers.Layer2;
-            GameHost.ExtraCameras.Add(camera2);
-
-            int minimapSize = 100;
-            Camera cameraMinimap = new Camera();
-            cameraMinimap.LayerMask = Layers.Layer1;
-            GameHost.ExtraCameras.Add(cameraMinimap);
-            cameraMinimap.ViewLocation = new Point(GameHost.Width - (minimapSize + 10), 10);
-            cameraMinimap.Size = new Point(minimapSize, minimapSize);
-            //cameraMinimap.Zoom = ((float)minimapSize / GameHost.Height);
-            cameraMinimap.Zoom = 0.2f;
-
-            GameHost.BackgroundColor = Color.Black;
+            
 
 
             //Background
@@ -71,8 +50,8 @@ namespace Platformer
             //t.LayerMask = Layers.Layer2;
 
 
-            Add(new GameContentContainer("gamecontent\\test_ground"));
-            //Add(new GameContentContainer("gamecontent\\test_ground_no_enemy"));
+            //Add(new GameContentContainer("gamecontent\\test_ground"));
+            Add(new GameContentContainer("gamecontent\\test_ground_no_enemy"));
             
 
             //Player...

@@ -1,0 +1,102 @@
+﻿using FNAEngine2D;
+using Microsoft.Xna.Framework;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Platformer
+{
+    /// <summary>
+    /// Bullet
+    /// </summary>
+    public class Bullet: GameObject
+    {
+        /// <summary>
+        /// Types to collide with
+        /// </summary>
+        private static readonly Type[] COLLIDER_TYPES;
+
+        /// <summary>
+        /// Time alive
+        /// </summary>
+        private float _lifeTime = 0f;
+
+        /// <summary>
+        /// Direction of the bullet
+        /// </summary>
+        public Vector2 Direction { get; set; }
+
+        /// <summary>
+        /// Speed meter per secondes
+        /// </summary>
+        public float SpeedMps { get; set; } = 10;
+
+
+        /// <summary>
+        /// Static constructor
+        /// </summary>
+        static Bullet()
+        {
+            //Building all the types to collide with
+            List<Type> types = new List<Type>();
+
+            types.AddRange(Constants.TYPE_COLLIDER_WALLS);
+            types.AddRange(Constants.TYPE_ENEMIES);
+
+            COLLIDER_TYPES = types.ToArray();
+        }
+
+
+        /// <summary>
+        /// Loading
+        /// </summary>
+        public override void Load()
+        {
+            SpriteAnimationRender animRender = Add(new SpriteAnimationRender("animations\\bullet"));
+            animRender.Bounds = this.Bounds.CenterMiddle(animRender.Width, animRender.Height);
+
+        }
+
+        /// <summary>
+        /// Update
+        /// </summary>
+        public override void Update()
+        {
+            _lifeTime += GameHost.ElapsedGameTimeSeconds;
+
+            //Max time alive...
+            if (_lifeTime > 2)
+            {
+                this.Destroy();
+                return;
+            }
+
+
+            //Check if we hit something...
+            Vector2 nextPosition = this.Location + (Direction * SpeedMps * GameHost.ElapsedGameTimeSeconds * GameHost.NbPixelPerMeter);
+
+            Collision collision = this.GetCollision(nextPosition, COLLIDER_TYPES);
+            if (collision != null)
+            {
+                this.Destroy();
+
+                foreach (GameObject obj in collision.CollidesWith)
+                {
+                    if (obj is Enemy)
+                    {
+                        SoundManager.PlaySfx(SoundManager.GetSfx("sfx\\hit"));
+                        obj.Destroy();
+                    }
+                }
+            }
+
+            this.Location = nextPosition;
+
+
+
+        }
+
+    }
+}

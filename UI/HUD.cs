@@ -16,6 +16,11 @@ namespace Platformer.UI
         private TextRender _textNbLive;
 
         /// <summary>
+        /// Last Health
+        /// </summary>
+        private int _lastHealth = -1;
+
+        /// <summary>
         /// Loading
         /// </summary>
         public override void Load()
@@ -23,10 +28,10 @@ namespace Platformer.UI
             
             Add(new GameContentContainer("gamecontent\\hud"));
 
-            var fps = Add(new FPSRender("fonts\\Roboto-Bold", 12, Color.Yellow));
-            fps.LayerMask = Layers.Layer2;
+            Add(new FPSRender("fonts\\Roboto-Bold", 12, Color.Yellow))
+                .SetLayerMask(PlatformerHost.UICamera.LayerMask);
 
-            _textNbLive = Find<TextRender>("NbLife");
+            _textNbLive = Find<TextRender>("Health");
         }
 
         /// <summary>
@@ -34,8 +39,15 @@ namespace Platformer.UI
         /// </summary>
         public override void Update()
         {
-            if(Player.Current != null)
-                _textNbLive.Text = Player.Current.NbLive.ToString() + " UP";
+            //No need to recalculte the text at each frame!
+            if (PlatformerHost.Player != null)
+            {
+                if (_lastHealth != PlatformerHost.Player.Health)
+                {
+                    _lastHealth = PlatformerHost.Player.Health;
+                    _textNbLive.Text = "HEALTH: " + _lastHealth.ToString();
+                }
+            }
         }
 
     }

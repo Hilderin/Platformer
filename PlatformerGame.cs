@@ -15,16 +15,7 @@ namespace Platformer
     /// </summary>
     public class PlatformerGame : GameObject
     {
-        /// <summary>
-        /// Instance courante
-        /// </summary>
-        public static PlatformerGame Instance;
-
-        /// <summary>
-        /// Number of lives
-        /// </summary>
-        public int NbLive = 3;
-
+        
         /// <summary>
         /// Curent level
         /// </summary>
@@ -36,17 +27,14 @@ namespace Platformer
         /// </summary>
         public PlatformerGame()
         {
-            Instance = this;
         }
 
 
         /// <summary>
         /// Restart le level...
         /// </summary>
-        public void Restart()
+        public void RestartLevel()
         {
-            NbLive = 3;
-
             //Clearup de scene...
             RemoveAll();
 
@@ -54,7 +42,7 @@ namespace Platformer
             Level = Add(new LevelScene());
 
             //UI!
-            //Add(new UI.HUD());
+            Add(new UI.HUD());
 
             MouseManager.HideMouse();
         }
@@ -98,7 +86,7 @@ namespace Platformer
         public override void Load()
         {
 
-            Restart();
+            RestartLevel();
 
         }
 

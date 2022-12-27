@@ -46,8 +46,7 @@ namespace Platformer.UI
         /// </summary>
         public void Continue()
         {
-            if (PlatformerGame.Instance != null)
-                PlatformerGame.Instance.Continue();
+            PlatformerHost.Continue();
 
         }
 
@@ -56,7 +55,7 @@ namespace Platformer.UI
         /// </summary>
         public void Quit()
         {
-            GameHost.Quit();
+            PlatformerHost.Quit();
         }
     }
 }

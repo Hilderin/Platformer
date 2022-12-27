@@ -5,11 +5,11 @@
       "Props": {
         "RotationOrigin": "0, 0",
         "FontName": "fonts\\Roboto-Bold",
-        "FontSize": 14,
+        "FontSize": 12,
         "Color": "255, 255, 255, 255",
-        "Text": "LIVE: 3",
-        "Name": "NbLife",
-        "Location": "0, 0",
+        "Text": "HEALTH: 100",
+        "Name": "Health",
+        "Location": "5, 250",
         "Size": "0, 0",
         "LayerMask": 2
       }

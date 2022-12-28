@@ -9,12 +9,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Platformer
+namespace Platformer.Objects
 {
     /// <summary>
     /// Player
     /// </summary>
-    public class Player: GameObject
+    public class Player : GameObject
     {
         /// <summary>
         /// Real sizes
@@ -50,6 +50,11 @@ namespace Platformer
         /// Last time was going right
         /// </summary>
         private bool _lastMoveWasRight = true;
+
+        /// <summary>
+        /// Player is crouch?
+        /// </summary>
+        private bool _isCrouch = false;
 
         /// <summary>
         /// Charactor animator
@@ -109,6 +114,7 @@ namespace Platformer
             _input = new CharacterInput();
             _input.JumpKey = Keys.W;
             _input.FireKey = Keys.Space;
+
         }
 
         /// <summary>
@@ -116,6 +122,21 @@ namespace Platformer
         /// </summary>
         public override void Load()
         {
+            this.Depth = Constants.PLAYER_DEPTH;
+
+            //Setup of the player in the game...
+            if (PlatformerHost.Player != this)
+            {
+                //Remove the player that could already exists...
+                if (PlatformerHost.Player != null && PlatformerHost.Player.Parent != null)
+                    PlatformerHost.Player.Parent.Remove(PlatformerHost.Player.Parent);
+
+                PlatformerHost.Player = this;
+
+                //To be able to use it to move the player in edit mode...
+                EditModeHelper.PlayerObject = this;
+            }
+
             this.EnableCollider();
 
             //Rigidbody to calculate physics (Gravity)
@@ -124,9 +145,7 @@ namespace Platformer
 
             //Animator...
             _charactorAnimator = Add(new SpriteAnimator<CharacterAnimations>("animations"));
-            _fireAnimator = Add(new SpriteAnimator<FireAnimations>("animations"));
-            _fireAnimator.Loop = false;
-            _fireAnimator.PlayOnStart = false;
+            _fireAnimator = Add(new SpriteAnimator<FireAnimations>("animations", false, false, true));
 
 
             //Footsteps........
@@ -158,11 +177,18 @@ namespace Platformer
         public override void Update()
         {
 
-            
+
 
             //Movement...
             _rigidBody.IsMovingLeft = _input.IsLeft;
             _rigidBody.IsMovingRight = _input.IsRight;
+
+            if (_input.IsLeft || _input.IsRight)
+                _isCrouch = false;
+            else if (_isGrounded && _input.IsDown)
+                _isCrouch = true;
+
+
 
             //Applying physics...
             Vector2 nextPosition = _rigidBody.ApplyPhysics();
@@ -182,6 +208,7 @@ namespace Platformer
             {
                 //Falling...
                 _isGrounded = false;
+                _isCrouch = false;
             }
 
             //Check collision with enemies...
@@ -197,7 +224,19 @@ namespace Platformer
             {
                 foreach (GameObject obstacle in collisionObstacles.CollidesWith)
                 {
-                    ((IObstacle)obstacle).Hit(this);
+                    if (obstacle is IObstacle)
+                        ((IObstacle)obstacle).Hit(this);
+                }
+            }
+
+            //Check collision with action collider...
+            Collision collisionPlayerActionCollides = this.GetCollision(nextPosition, Constants.TYPE_PLAYER_ACTION_COLLIDE);
+            if (collisionPlayerActionCollides != null)
+            {
+                foreach (GameObject actionObj in collisionPlayerActionCollides.CollidesWith)
+                {
+                    if (actionObj is IPlayerActionCollide)
+                        ((IPlayerActionCollide)actionObj).Collide(this);
                 }
             }
 
@@ -244,8 +283,8 @@ namespace Platformer
             _isLastGrounded = _isGrounded;
 
             PlatformerHost.MainCamera.Location = nextPosition + OFFSET_CAMERA - new Vector2(GameHost.CenterX, GameHost.CenterY);
-            
-            if(PlatformerHost.MinimapCamera != null)
+
+            if (PlatformerHost.MinimapCamera != null)
                 PlatformerHost.MinimapCamera.Location = GameHost.MainCamera.Location;
 
         }
@@ -259,19 +298,37 @@ namespace Platformer
 
             if (_lastMoveWasRight)
             {
-                bullet.Location = new Vector2(this.Bounds.Right - 3, this.Location.Y + 18);
+                if (_isCrouch)
+                {
+                    bullet.Location = new Vector2(this.Bounds.Right - 3, this.Location.Y + 32);
+                    _fireAnimator.Play(FireAnimations.fire_crouch_right);
+                }
+                else
+                {
+                    bullet.Location = new Vector2(this.Bounds.Right - 3, this.Location.Y + 18);
+                    _fireAnimator.Play(FireAnimations.fire_right);
+                }
                 bullet.Direction = new Vector2(1, 0);
-                _fireAnimator.Play(FireAnimations.fire_right);
+
             }
             else
             {
-                bullet.Location = new Vector2(this.Location.X + 3, this.Location.Y + 18);
+                if (_isCrouch)
+                {
+                    bullet.Location = new Vector2(this.Location.X + 3, this.Location.Y + 32);
+                    _fireAnimator.Play(FireAnimations.fire_crouch_left);
+                }
+                else
+                {
+                    bullet.Location = new Vector2(this.Location.X + 3, this.Location.Y + 18);
+                    _fireAnimator.Play(FireAnimations.fire_left);
+                }
                 bullet.Direction = new Vector2(-1, 0);
-                _fireAnimator.Play(FireAnimations.fire_left);
             }
+
             bullet.SpeedMps = 10;
             SoundManager.PlaySfx(_fireSfx);
-            
+
 
         }
 
@@ -297,11 +354,17 @@ namespace Platformer
             }
             else if (_lastMoveWasRight)
             {
-                animationToUse = CharacterAnimations.character_idle_right;
+                if (_isCrouch)
+                    animationToUse = CharacterAnimations.character_crouch_right;
+                else
+                    animationToUse = CharacterAnimations.character_idle_right;
             }
             else
             {
-                animationToUse = CharacterAnimations.character_idle_left;
+                if (_isCrouch)
+                    animationToUse = CharacterAnimations.character_crouch_left;
+                else
+                    animationToUse = CharacterAnimations.character_idle_left;
             }
 
             if (!_isGrounded)

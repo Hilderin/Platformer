@@ -17,6 +17,8 @@ namespace Platformer
         character_jump_left,
         character_jump_right,
         character_run_left,
-        character_run_right
+        character_run_right,
+        character_crouch_left,
+        character_crouch_right
     }
 }

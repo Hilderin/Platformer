@@ -12,6 +12,8 @@ namespace Platformer
     public enum FireAnimations
     {
         fire_left,
-        fire_right
+        fire_right,
+        fire_crouch_left,
+        fire_crouch_right
     }
 }

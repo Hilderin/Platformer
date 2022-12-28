@@ -1,17 +1,18 @@
 ﻿using FNAEngine2D;
 using Microsoft.Xna.Framework;
+using Platformer.Objects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Platformer
+namespace Platformer.Enemies
 {
     /// <summary>
     /// Basic enemy object
     /// </summary>
-    public class Enemy: GameObject
+    public class Enemy: GameObject, IHittable
     {
         /// <summary>
         /// RigidBody
@@ -26,6 +27,7 @@ namespace Platformer
             this.Width = 22;
             this.Height = 28;
         }
+
 
         /// <summary>
         /// Loading...
@@ -81,6 +83,15 @@ namespace Platformer
 
             //And we move the object at the calculated coords...
             this.Location = nextPosition;
+        }
+
+        /// <summary>
+        /// Enemy hit
+        /// </summary>
+        public void Hit(int hitPoint)
+        {
+            SoundManager.PlaySfx(SoundManager.GetSfx("sfx\\hit"));
+            this.Destroy();
         }
     }
 }

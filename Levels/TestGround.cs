@@ -1,12 +1,13 @@
 ﻿using FNAEngine2D;
 using Microsoft.Xna.Framework;
+using Platformer.Objects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Platformer
+namespace Platformer.Levels
 {
     /// <summary>
     /// Test ground

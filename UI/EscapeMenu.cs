@@ -17,7 +17,7 @@ namespace Platformer.UI
         /// </summary>
         public override void Load()
         {
-            this.Depth = -10000;
+            this.Depth = Constants.UI_DEPTH;
 
             GameContentManager.Apply(this, "gamecontent\\escape_menu");
 

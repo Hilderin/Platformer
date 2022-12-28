@@ -45,23 +45,26 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bullet.cs" />
+    <Compile Include="Objects\Bullet.cs" />
     <Compile Include="FireAnimations.cs" />
     <Compile Include="CharacterAnimations.cs" />
     <Compile Include="Constants.cs" />
-    <Compile Include="Enemy.cs" />
-    <Compile Include="Lava.cs" />
-    <Compile Include="IObstacle.cs" />
+    <Compile Include="Enemies\Enemy.cs" />
+    <Compile Include="Objects\Door.cs" />
+    <Compile Include="Objects\IHittable.cs" />
+    <Compile Include="Objects\IPlayerActionCollide.cs" />
+    <Compile Include="Objects\Lava.cs" />
+    <Compile Include="Objects\IObstacle.cs" />
     <Compile Include="PlatformerHost.cs" />
-    <Compile Include="Player.cs" />
-    <Compile Include="PlayerStart.cs" />
+    <Compile Include="Objects\Player.cs" />
+    <Compile Include="Objects\PlayerStart.cs" />
     <Compile Include="SoundManager.cs" />
-    <Compile Include="TestGround.cs" />
+    <Compile Include="Levels\TestGround.cs" />
     <Compile Include="UI\Button.cs" />
     <Compile Include="UI\EscapeMenu.cs" />
     <Compile Include="UI\Win.cs" />
     <Compile Include="UI\GameOver.cs" />
-    <Compile Include="LevelScene.cs" />
+    <Compile Include="Levels\LevelScene.cs" />
     <Compile Include="PlatformerGame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="UI\HUD.cs" />

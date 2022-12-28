@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using Platformer.Levels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,13 +34,13 @@ namespace Platformer
         /// <summary>
         /// Restart le level...
         /// </summary>
-        public void RestartLevel()
+        public void ReloadRoom()
         {
             //Clearup de scene...
             RemoveAll();
 
             //Add the level...
-            Level = Add(new LevelScene());
+            Level = Add(new LevelScene(PlatformerHost.CurrentRoom));
 
             //UI!
             Add(new UI.HUD());
@@ -91,7 +92,7 @@ namespace Platformer
         public override void Load()
         {
 
-            RestartLevel();
+            ReloadRoom();
 
         }
 

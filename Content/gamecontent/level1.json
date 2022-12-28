@@ -2219,7 +2219,7 @@
             37,
             4,
             27,
-            43,
+            42,
             4,
             28,
             42,
@@ -2309,7 +2309,7 @@
             38,
             4,
             27,
-            43,
+            42,
             4,
             28,
             42,
@@ -2399,7 +2399,7 @@
             39,
             4,
             27,
-            43,
+            42,
             4,
             28,
             42,
@@ -2483,7 +2483,7 @@
             40,
             4,
             27,
-            43,
+            42,
             4,
             28,
             42,
@@ -2561,7 +2561,7 @@
             41,
             4,
             27,
-            43,
+            42,
             4,
             28,
             42,
@@ -2801,7 +2801,7 @@
             39,
             4,
             27,
-            43,
+            42,
             4,
             28,
             42,
@@ -2881,6 +2881,9 @@
             16,
             40,
             4,
+            27,
+            42,
+            4,
             28,
             42,
             4,
@@ -2958,6 +2961,9 @@
             3,
             16,
             41,
+            4,
+            27,
+            42,
             4,
             28,
             42,
@@ -7135,9 +7141,6 @@
             15,
             43,
             4,
-            31,
-            42,
-            4,
             32,
             42,
             4,
@@ -10414,18 +10417,6 @@
             34,
             42,
             4,
-            35,
-            14,
-            0,
-            36,
-            14,
-            1,
-            37,
-            14,
-            2,
-            38,
-            14,
-            3,
             39,
             43,
             4,
@@ -11363,29 +11354,14 @@
     },
     {
       "Props": {
-        "Location": "1342, 356",
-        "Size": "22, 28",
-        "Collidable": true
-      },
-      "ClassName": "Enemy"
-    },
-    {
-      "Props": {
+        "PreviousRoom": "start",
         "Location": "329, 384"
       },
       "ClassName": "PlayerStart"
     },
     {
       "Props": {
-        "Location": "726, 468",
-        "Size": "22, 28",
-        "Collidable": true
-      },
-      "ClassName": "Enemy"
-    },
-    {
-      "Props": {
-        "Location": "1654, 468",
+        "Location": "1676, 468",
         "Size": "22, 28",
         "Collidable": true
       },
@@ -11636,93 +11612,132 @@
     },
     {
       "Props": {
-        "Location": "2232, 632"
+        "Location": "2232, 632",
+        "Collidable": true
       },
       "ClassName": "Lava"
     },
     {
       "Props": {
-        "Location": "2248, 632"
+        "Location": "2248, 632",
+        "Collidable": true
       },
       "ClassName": "Lava"
     },
     {
       "Props": {
-        "Location": "2264, 632"
+        "Location": "2264, 632",
+        "Collidable": true
       },
       "ClassName": "Lava"
     },
     {
       "Props": {
-        "Location": "2280, 632"
+        "Location": "2280, 632",
+        "Collidable": true
       },
       "ClassName": "Lava"
     },
     {
       "Props": {
-        "Location": "2296, 632"
+        "Location": "2296, 632",
+        "Collidable": true
       },
       "ClassName": "Lava"
     },
     {
       "Props": {
-        "Location": "2312, 632"
+        "Location": "2312, 632",
+        "Collidable": true
       },
       "ClassName": "Lava"
     },
     {
       "Props": {
-        "Location": "2328, 632"
+        "Location": "2328, 632",
+        "Collidable": true
       },
       "ClassName": "Lava"
     },
     {
       "Props": {
-        "Location": "2344, 632"
+        "Location": "2344, 632",
+        "Collidable": true
       },
       "ClassName": "Lava"
     },
     {
       "Props": {
-        "Location": "2360, 632"
+        "Location": "2360, 632",
+        "Collidable": true
       },
       "ClassName": "Lava"
     },
     {
       "Props": {
-        "Location": "2376, 632"
+        "Location": "2376, 632",
+        "Collidable": true
       },
       "ClassName": "Lava"
     },
     {
       "Props": {
-        "Location": "2392, 632"
+        "Location": "2392, 632",
+        "Collidable": true
       },
       "ClassName": "Lava"
     },
     {
       "Props": {
-        "Location": "2408, 632"
+        "Location": "2408, 632",
+        "Collidable": true
       },
       "ClassName": "Lava"
     },
     {
       "Props": {
-        "Location": "2424, 632"
+        "Location": "2424, 632",
+        "Collidable": true
       },
       "ClassName": "Lava"
     },
     {
       "Props": {
-        "Location": "2440, 632"
+        "Location": "2440, 632",
+        "Collidable": true
       },
       "ClassName": "Lava"
     },
     {
       "Props": {
-        "Location": "2456, 632"
+        "Location": "2456, 632",
+        "Collidable": true
       },
       "ClassName": "Lava"
+    },
+    {
+      "Props": {
+        "NextRoom": "level2",
+        "Location": "2672, 560",
+        "Size": "16, 64",
+        "Collidable": true
+      },
+      "ClassName": "Door"
+    },
+    {
+      "Props": {
+        "Location": "1126, 372",
+        "Size": "22, 28",
+        "Collidable": true
+      },
+      "ClassName": "Enemy"
+    },
+    {
+      "Props": {
+        "PreviousRoom": "level2",
+        "Location": "2638, 575"
+      },
+      "ClassName": "PlayerStart"
     }
   ]
 }

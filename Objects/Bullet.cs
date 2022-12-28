@@ -1,12 +1,13 @@
 ﻿using FNAEngine2D;
 using Microsoft.Xna.Framework;
+using Platformer.Enemies;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Platformer
+namespace Platformer.Objects
 {
     /// <summary>
     /// Bullet
@@ -43,7 +44,9 @@ namespace Platformer
             List<Type> types = new List<Type>();
 
             types.AddRange(Constants.TYPE_COLLIDER_WALLS);
-            types.AddRange(Constants.TYPE_ENEMIES);
+            //types.AddRange(Constants.TYPE_ENEMIES);
+            types.AddRange(Constants.TYPE_HITTABLE);
+            
 
             COLLIDER_TYPES = types.ToArray();
         }
@@ -84,10 +87,9 @@ namespace Platformer
 
                 foreach (GameObject obj in collision.CollidesWith)
                 {
-                    if (obj is Enemy)
+                    if (obj is IHittable)
                     {
-                        SoundManager.PlaySfx(SoundManager.GetSfx("sfx\\hit"));
-                        obj.Destroy();
+                        ((IHittable)obj).Hit(1);
                     }
                 }
             }

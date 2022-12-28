@@ -1,5 +1,6 @@
 ﻿using FNAEngine2D;
 using Microsoft.Xna.Framework;
+using Platformer.Objects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,6 +46,16 @@ namespace Platformer
         /// Current Player
         /// </summary>
         public static Player Player;
+
+        /// <summary>
+        /// Current room
+        /// </summary>
+        public static string CurrentRoom { get; private set; } = "level2";
+
+        /// <summary>
+        /// Previous room
+        /// </summary>
+        public static string PreviousRoom { get; private set; } = "level1";
 
 
         /// <summary>
@@ -94,7 +105,7 @@ namespace Platformer
         public static void RestartLevel()
         {
             if(Root != null)
-                Root.RestartLevel();
+                Root.ReloadRoom();
         }
 
         /// <summary>
@@ -114,6 +125,17 @@ namespace Platformer
             GameHost.Quit();
         }
 
+        /// <summary>
+        /// Load a room
+        /// </summary>
+        public static void LoadRoom(string room)
+        {
+            PreviousRoom = CurrentRoom;
+            CurrentRoom = room;
+
+            if (Root != null)
+                Root.ReloadRoom();
+        }
 
         /// <summary>
         /// Setup cameras

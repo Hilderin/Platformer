@@ -4,18 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Platformer
+namespace Platformer.Objects
 {
-    /// <summary>
-    /// Obstable
-    /// </summary>
-    public interface IObstacle
+    public interface IHittable
     {
-
         /// <summary>
-        /// Hit the player
+        /// Hit the object with a bullet
         /// </summary>
-        void Hit(Player player);
+        void Hit(int hitPoint);
 
     }
 }

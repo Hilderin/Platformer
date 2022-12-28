@@ -25,7 +25,7 @@ namespace Platformer.UI
         /// </summary>
         public override void Load()
         {
-            this.Depth = -1000;
+            this.Depth = Constants.UI_DEPTH;
 
             Add(new GameContentContainer("gamecontent\\hud"));
 

@@ -20,7 +20,7 @@ namespace Platformer.UI
         /// </summary>
         public override void Load()
         {
-            this.Depth = -10000;
+            this.Depth = Constants.UI_DEPTH;
 
             //Add(new TextRender("GAME OVER", "fonts\\Roboto-Bold", 60, GameHost.Rectangle, Color.DarkRed, TextHorizontalAlignment.Center, TextVerticalAlignment.Middle));
             //Add(new Button("RETRY", new Rectangle(GameHost.CenterX - 100, GameHost.CenterY + 200, 200, 60), Retry));

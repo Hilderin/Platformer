@@ -50,12 +50,12 @@ namespace Platformer
         /// <summary>
         /// Current room
         /// </summary>
-        public static string CurrentRoom { get; private set; } = "level2";
+        public static string CurrentRoom { get; private set; } = "level1";
 
         /// <summary>
         /// Previous room
         /// </summary>
-        public static string PreviousRoom { get; private set; } = "level1";
+        public static string PreviousRoom { get; private set; } = "start";
 
 
         /// <summary>

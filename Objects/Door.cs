@@ -125,8 +125,11 @@ namespace Platformer.Objects
         /// </summary>
         public void Collide(Player player)
         {
-            if (!String.IsNullOrEmpty(NextRoom))
-                PlatformerHost.LoadRoom(NextRoom);
+            if (Opened)
+            {
+                if (!String.IsNullOrEmpty(NextRoom))
+                    PlatformerHost.LoadRoom(NextRoom);
+            }
 
 
         }

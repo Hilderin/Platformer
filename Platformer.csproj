@@ -55,10 +55,8 @@
     <Compile Include="Objects\IPlayerActionCollide.cs" />
     <Compile Include="Objects\Lava.cs" />
     <Compile Include="Objects\IObstacle.cs" />
-    <Compile Include="PlatformerHost.cs" />
     <Compile Include="Objects\Player.cs" />
     <Compile Include="Objects\PlayerStart.cs" />
-    <Compile Include="SoundManager.cs" />
     <Compile Include="Levels\TestGround.cs" />
     <Compile Include="UI\Button.cs" />
     <Compile Include="UI\EscapeMenu.cs" />

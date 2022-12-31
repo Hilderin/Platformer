@@ -67,7 +67,7 @@ namespace Platformer.Objects
         /// </summary>
         public override void Update()
         {
-            _lifeTime += GameHost.ElapsedGameTimeSeconds;
+            _lifeTime += this.ElapsedGameTimeSeconds;
 
             //Max time alive...
             if (_lifeTime > 2)
@@ -78,7 +78,7 @@ namespace Platformer.Objects
 
 
             //Check if we hit something...
-            Vector2 nextPosition = this.Location + (Direction * SpeedMps * GameHost.ElapsedGameTimeSeconds * GameHost.NbPixelPerMeter);
+            Vector2 nextPosition = this.Location + (Direction * SpeedMps * this.ElapsedGameTimeSeconds * this.Game.NbPixelPerMeter);
 
             Collision collision = this.GetCollision(nextPosition, COLLIDER_TYPES);
             if (collision != null)

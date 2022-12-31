@@ -15,21 +15,29 @@ namespace Platformer.UI
     /// </summary>
     public class Win : GameObject
     {
+
+        /// <summary>
+        /// Current game
+        /// </summary>
+        private PlatformerGame _game;
+
         /// <summary>
         /// Loading
         /// </summary>
         public override void Load()
         {
+            _game = this.Game.RootGameObject as PlatformerGame;
+
             this.Depth = Constants.UI_DEPTH;
 
-            Add(new TextRender("WIN", "fonts\\Roboto-Bold", 60, GameHost.Rectangle, Color.Green, TextHorizontalAlignment.Center, TextVerticalAlignment.Middle));
-            Add(new Button("RETRY", new Rectangle(GameHost.CenterX - 100, GameHost.CenterY + 200, 200, 60), Retry));
+            Add(new TextRender("WIN", "fonts\\Roboto-Bold", 60, this.Game.Rectangle, Color.Green, TextHorizontalAlignment.Center, TextVerticalAlignment.Middle));
+            Add(new Button("RETRY", new Rectangle(this.Game.CenterX - 100, this.Game.CenterY + 200, 200, 60), Retry));
 
-            SoundEffectPlayer.PlayStatic("sfx\\win");
+            GetContent<SoundEffect>("sfx\\win").Data.Play();
 
             MediaPlayer.Stop();
 
-            MouseManager.ShowMouse();
+            this.Mouse.ShowMouse();
 
         }
 
@@ -38,7 +46,8 @@ namespace Platformer.UI
         /// </summary>
         public void Retry()
         {
-            PlatformerHost.RestartLevel();
+            if (_game != null)
+                _game.ReloadRoom();
         }
     }
 }

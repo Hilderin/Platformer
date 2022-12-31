@@ -11,12 +11,18 @@ namespace Platformer.UI
 {
     public class EscapeMenu: GameObject
     {
+        /// <summary>
+        /// Current game
+        /// </summary>
+        private PlatformerGame _game;
 
         /// <summary>
         /// Loading
         /// </summary>
         public override void Load()
         {
+            _game = this.Game.RootGameObject as PlatformerGame;
+
             this.Depth = Constants.UI_DEPTH;
 
             GameContentManager.Apply(this, "gamecontent\\escape_menu");
@@ -24,7 +30,7 @@ namespace Platformer.UI
             Find<Button>("ContinueButton").OnClick = Continue;
             Find<Button>("QuitButton").OnClick = Quit;
 
-            MouseManager.ShowMouse();
+            this.Mouse.ShowMouse();
 
         }
 
@@ -34,7 +40,8 @@ namespace Platformer.UI
         /// </summary>
         public void Continue()
         {
-            PlatformerHost.Continue();
+            if(_game != null)
+                _game.Continue();
 
         }
 
@@ -43,7 +50,7 @@ namespace Platformer.UI
         /// </summary>
         public void Quit()
         {
-            PlatformerHost.Quit();
+            this.Game.Quit();
         }
     }
 }

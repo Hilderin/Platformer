@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Platformer.Levels;
+using Platformer.Objects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,31 @@ namespace Platformer
         /// </summary>
         public LevelScene Level;
 
+        /// <summary>
+        /// Camera for the UI
+        /// </summary>
+        public Camera UICamera;
+
+        /// <summary>
+        /// Camera for the Minimap
+        /// </summary>
+        public Camera MinimapCamera;
+
+        /// <summary>
+        /// Current Player
+        /// </summary>
+        public Player Player;
+
+        /// <summary>
+        /// Current room
+        /// </summary>
+        public string CurrentRoom { get; private set; } = "level1";
+
+        /// <summary>
+        /// Previous room
+        /// </summary>
+        public string PreviousRoom { get; private set; } = "start";
+
 
         /// <summary>
         /// Constructeur
@@ -40,12 +66,12 @@ namespace Platformer
             RemoveAll();
 
             //Add the level...
-            Level = Add(new LevelScene(PlatformerHost.CurrentRoom));
+            Level = Add(new LevelScene(this.CurrentRoom));
 
             //UI!
             Add(new UI.HUD());
 
-            MouseManager.HideMouse();
+            this.Mouse.HideMouse();
         }
 
         /// <summary>
@@ -57,7 +83,7 @@ namespace Platformer
 
             Level.Paused = false;
 
-            MouseManager.HideMouse();
+            this.Mouse.HideMouse();
         }
 
         /// <summary>
@@ -79,11 +105,22 @@ namespace Platformer
         {
             Level.Paused = true;
 
-            if(PlatformerHost.Player != null)
-                PlatformerHost.Player.Destroy();
+            if(this.Player != null)
+                this.Player.Destroy();
 
             if(Find<UI.GameOver>() == null)
                 Add(new UI.GameOver()); 
+        }
+
+        /// <summary>
+        /// Load a room
+        /// </summary>
+        public void LoadRoom(string room)
+        {
+            PreviousRoom = CurrentRoom;
+            CurrentRoom = room;
+
+            ReloadRoom();
         }
 
         /// <summary>
@@ -91,6 +128,7 @@ namespace Platformer
         /// </summary>
         public override void Load()
         {
+            SetupCamera();
 
             ReloadRoom();
 
@@ -117,6 +155,38 @@ namespace Platformer
             
         }
 
+
+
+
+
+
+        /// <summary>
+        /// Setup cameras
+        /// </summary>
+        private void SetupCamera()
+        {
+            this.Game.ResetCameras();
+
+            //Main camera that follow the player...
+            this.Game.MainCamera.LayerMask = Layers.Layer1;
+
+            //UI camera...
+            Camera uiCamera = new Camera(this.Game.Width, this.Game.Height);
+            uiCamera.LayerMask = Layers.Layer2;
+            this.Game.AddCamera(uiCamera);
+            this.UICamera = uiCamera;
+
+
+            //For the minimap...
+            //int minimapSize = 100;
+            //Camera cameraMinimap = new Camera();
+            //cameraMinimap.LayerMask = Layers.Layer1;
+            //GameHost.ExtraCameras.Add(cameraMinimap);
+            //cameraMinimap.ViewLocation = new Point(GameHost.Width - (minimapSize + 10), 10);
+            //cameraMinimap.Size = new Point(minimapSize, minimapSize);
+            ////cameraMinimap.Zoom = ((float)minimapSize / GameHost.Height);
+            //cameraMinimap.Zoom = 0.2f;
+        }
 
 
 

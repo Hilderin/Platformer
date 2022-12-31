@@ -24,6 +24,10 @@ namespace Platformer.Objects
         public const int JUMP_HEIGHT = 50;
         public readonly Vector2 OFFSET_CAMERA = new Vector2(WIDTH / 2, HEIGHT / 2);
 
+        /// <summary>
+        /// Current game
+        /// </summary>
+        private PlatformerGame _game;
 
         /// <summary>
         /// Input control
@@ -111,7 +115,7 @@ namespace Platformer.Objects
             this.Height = HEIGHT;
 
             //Setup the inputs...
-            _input = new CharacterInput();
+            _input = new CharacterInput(this);
             _input.JumpKey = Keys.W;
             _input.FireKey = Keys.Space;
 
@@ -122,19 +126,22 @@ namespace Platformer.Objects
         /// </summary>
         public override void Load()
         {
+            _game = this.Game.RootGameObject as PlatformerGame;
+
             this.Depth = Constants.PLAYER_DEPTH;
 
             //Setup of the player in the game...
-            if (PlatformerHost.Player != this)
+            if (_game != null && _game.Player != this)
             {
                 //Remove the player that could already exists...
-                if (PlatformerHost.Player != null && PlatformerHost.Player.Parent != null)
-                    PlatformerHost.Player.Parent.Remove(PlatformerHost.Player.Parent);
+                if (_game.Player != null && _game.Player.Parent != null)
+                    _game.Player.Parent.Remove(_game.Player.Parent);
 
-                PlatformerHost.Player = this;
+                _game.Player = this;
 
                 //To be able to use it to move the player in edit mode...
-                EditModeHelper.PlayerObject = this;
+                if(this.Game.EditModeService != null)
+                    this.Game.EditModeService.PlayerObject = this;
             }
 
             this.EnableCollider();
@@ -166,7 +173,7 @@ namespace Platformer.Objects
 
 
             //Fire
-            _fireSfx = SoundManager.GetSfx("sfx\\fire");
+            _fireSfx = GetContent<SoundEffect>("sfx\\fire");
 
 
         }
@@ -244,7 +251,8 @@ namespace Platformer.Objects
             if (this.Health < 0)
             {
                 //We are dead!
-                PlatformerHost.GameOver();
+                if(_game != null)
+                    _game.GameOver();
                 return;
             }
 
@@ -282,10 +290,11 @@ namespace Platformer.Objects
 
             _isLastGrounded = _isGrounded;
 
-            PlatformerHost.MainCamera.Location = nextPosition + OFFSET_CAMERA - new Vector2(GameHost.CenterX, GameHost.CenterY);
+            
+            this.Game.MainCamera.Location = nextPosition + OFFSET_CAMERA - new Vector2(this.Game.CenterX, this.Game.CenterY);
 
-            if (PlatformerHost.MinimapCamera != null)
-                PlatformerHost.MinimapCamera.Location = GameHost.MainCamera.Location;
+            if (_game != null & _game.MinimapCamera != null)
+                _game.MinimapCamera.Location = this.Game.MainCamera.Location;
 
         }
 
@@ -327,7 +336,7 @@ namespace Platformer.Objects
             }
 
             bullet.SpeedMps = 10;
-            SoundManager.PlaySfx(_fireSfx);
+            _fireSfx.Data.Play();
 
 
         }

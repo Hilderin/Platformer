@@ -1,5 +1,6 @@
 ﻿using FNAEngine2D;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Platformer.Objects;
 using System;
 using System.Collections.Generic;
@@ -90,7 +91,7 @@ namespace Platformer.Enemies
         /// </summary>
         public void Hit(int hitPoint)
         {
-            SoundManager.PlaySfx(SoundManager.GetSfx("sfx\\hit"));
+            GetContent<SoundEffect>("sfx\\hit").Data.Play();
             this.Destroy();
         }
     }

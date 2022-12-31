@@ -14,6 +14,11 @@ namespace Platformer.Objects
     {
 
         /// <summary>
+        /// Current game
+        /// </summary>
+        private PlatformerGame _game;
+
+        /// <summary>
         /// Previous room that the player must comme from
         /// </summary>
         public string PreviousRoom { get; set; } = String.Empty;
@@ -24,10 +29,15 @@ namespace Platformer.Objects
         /// </summary>
         public override void Load()
         {
-            if (String.IsNullOrEmpty(this.PreviousRoom) || PlatformerHost.PreviousRoom == this.PreviousRoom)
+            _game = this.Game.RootGameObject as PlatformerGame;
+
+            if (_game != null)
             {
-                PlatformerHost.Player = Add(new Player());
-                PlatformerHost.Player.TranslateTo(this.Location);
+                if (String.IsNullOrEmpty(this.PreviousRoom) || _game.PreviousRoom == this.PreviousRoom)
+                {
+                    _game.Player = Add(new Player());
+                    _game.Player.TranslateTo(this.Location);
+                }
             }
         }
     }

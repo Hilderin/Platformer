@@ -1,4 +1,5 @@
 ﻿using FNAEngine2D;
+using Microsoft.Xna.Framework.Audio;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,11 @@ namespace Platformer.Objects
     /// </summary>
     public class Door: GameObject, IHittable, IPlayerActionCollide
     {
+
+        /// <summary>
+        /// Current game
+        /// </summary>
+        private PlatformerGame _game;
 
         /// <summary>
         /// Animation render
@@ -76,6 +82,8 @@ namespace Platformer.Objects
         /// </summary>
         public override void Load()
         {
+            _game = this.Game.RootGameObject as PlatformerGame;
+
             _spriteAnimationRender = Add(new SpriteAnimationRender("animations\\door_yellow", false, false, false));
             _spriteAnimationRender.Location = this.Location;
             _spriteAnimationRender.InvertedX = _invertedX;
@@ -113,7 +121,7 @@ namespace Platformer.Objects
         {
             if (!Opened && !_isOpening)
             {
-                SoundManager.PlaySfx(SoundManager.GetSfx("sfx\\door"));
+                GetContent<SoundEffect>("sfx\\door").Data.Play();
 
                 _isOpening = true;
                 _spriteAnimationRender.Play();
@@ -128,7 +136,7 @@ namespace Platformer.Objects
             if (Opened)
             {
                 if (!String.IsNullOrEmpty(NextRoom))
-                    PlatformerHost.LoadRoom(NextRoom);
+                    _game.LoadRoom(NextRoom);
             }
 
 

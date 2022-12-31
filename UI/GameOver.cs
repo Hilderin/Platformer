@@ -15,11 +15,19 @@ namespace Platformer.UI
     /// </summary>
     public class GameOver: GameObject
     {
+
+        /// <summary>
+        /// Current game
+        /// </summary>
+        private PlatformerGame _game;
+
         /// <summary>
         /// Loading
         /// </summary>
         public override void Load()
         {
+            _game = this.Game.RootGameObject as PlatformerGame;
+
             this.Depth = Constants.UI_DEPTH;
 
             //Add(new TextRender("GAME OVER", "fonts\\Roboto-Bold", 60, GameHost.Rectangle, Color.DarkRed, TextHorizontalAlignment.Center, TextVerticalAlignment.Middle));
@@ -27,11 +35,11 @@ namespace Platformer.UI
 
             Add(new GameContentContainer("gamecontent\\gameover"));
 
-            SoundEffectPlayer.PlayStatic("sfx\\gameover");
+            GetContent<SoundEffect>("sfx\\gameover").Data.Play();
 
             MediaPlayer.Stop();
 
-            MouseManager.ShowMouse();
+            this.Mouse.ShowMouse();
 
         }
 
@@ -40,7 +48,8 @@ namespace Platformer.UI
         /// </summary>
         public void Retry_OnClick()
         {
-            PlatformerHost.RestartLevel();
+            if(_game != null)
+                _game.ReloadRoom();
         }
 
         /// <summary>
@@ -48,7 +57,7 @@ namespace Platformer.UI
         /// </summary>
         public void Quit_OnClick()
         {
-            PlatformerHost.Quit();
+            this.Game.Quit();
         }
     }
 }

@@ -53,6 +53,15 @@ namespace Platformer.Objects
 
 
         /// <summary>
+        /// Constructor
+        /// </summary>
+        public Bullet()
+        {
+            this.Width = 8;
+            this.Height = 8;
+        }
+
+        /// <summary>
         /// Loading
         /// </summary>
         public override void Load()

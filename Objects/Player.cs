@@ -309,12 +309,12 @@ namespace Platformer.Objects
             {
                 if (_isCrouch)
                 {
-                    bullet.Location = new Vector2(this.Bounds.Right - 3, this.Location.Y + 32);
+                    bullet.Location = new Vector2(this.Bounds.Right - 3, this.Location.Y + 28);
                     _fireAnimator.Play(FireAnimations.fire_crouch_right);
                 }
                 else
                 {
-                    bullet.Location = new Vector2(this.Bounds.Right - 3, this.Location.Y + 18);
+                    bullet.Location = new Vector2(this.Bounds.Right - 3, this.Location.Y + 14);
                     _fireAnimator.Play(FireAnimations.fire_right);
                 }
                 bullet.Direction = new Vector2(1, 0);
@@ -324,12 +324,12 @@ namespace Platformer.Objects
             {
                 if (_isCrouch)
                 {
-                    bullet.Location = new Vector2(this.Location.X + 3, this.Location.Y + 32);
+                    bullet.Location = new Vector2(this.Location.X + 3, this.Location.Y + 28);
                     _fireAnimator.Play(FireAnimations.fire_crouch_left);
                 }
                 else
                 {
-                    bullet.Location = new Vector2(this.Location.X + 3, this.Location.Y + 18);
+                    bullet.Location = new Vector2(this.Location.X + 3, this.Location.Y + 14);
                     _fireAnimator.Play(FireAnimations.fire_left);
                 }
                 bullet.Direction = new Vector2(-1, 0);

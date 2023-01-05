@@ -200,7 +200,7 @@ namespace Platformer.Objects
 
 
             //Check for collision...
-            if (_rigidBody.Collistion != null)
+            if (_rigidBody.Collision != null)
             {
                 //Is grounded?
                 _isGrounded = (this.Location.Y == _rigidBody.LastLocation.Y);

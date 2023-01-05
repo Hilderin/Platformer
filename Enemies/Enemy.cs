@@ -52,7 +52,7 @@ namespace Platformer.Enemies
         /// </summary>
         protected override void Update()
         {
-            if (_rigidBody.Collistion != null)
+            if (_rigidBody.Collision != null)
             {
                 //Check if the enemy hit a wall...
                 if (this.Location.X == _rigidBody.LastLocation.X)

@@ -1,9 +1,11 @@
 ﻿using FNAEngine2D;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
+using Newtonsoft.Json;
 using Platformer.Objects;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +31,6 @@ namespace Platformer.Enemies
             this.Height = 28;
         }
 
-
         /// <summary>
         /// Loading...
         /// </summary>
@@ -38,12 +39,14 @@ namespace Platformer.Enemies
             var animation = Add(new SpriteAnimationRender("animations\\enemy"));
             animation.Bounds = this.Bounds.CenterBottom(animation.Width, animation.Height);
 
-            this.EnableCollider();
+            if(!this.Collidable)
+                this.EnableCollider();
 
             _rigidBody = AddComponent<RigidBody>();
             _rigidBody.SpeedMps = 2;
             _rigidBody.ColliderTypes = Constants.TYPE_COLLIDER_WALLS;
             _rigidBody.Movement = new Vector2(1, 0);    //Right
+            _rigidBody.UseGravity = true;
 
         }
 

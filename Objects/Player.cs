@@ -155,6 +155,7 @@ namespace Platformer.Objects
             _rigidBody = AddComponent<RigidBody>();
             _rigidBody.SpeedMps = 3;
             _rigidBody.ColliderTypes = Constants.TYPE_COLLIDER_WALLS;
+            _rigidBody.UseGravity = true;
 
             //Animator...
             _charactorAnimator = Add(new SpriteAnimator<CharacterAnimations>("animations"));

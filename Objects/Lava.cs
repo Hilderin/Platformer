@@ -19,6 +19,9 @@ namespace Platformer.Objects
         {
             //Collidable par default
             this.Collidable = true;
+
+            this.Width = Constants.TILE_SIZE;
+            this.Height = Constants.TILE_SIZE;
         }
 
         /// <summary>

@@ -42,7 +42,7 @@ namespace Platformer.Enemies
 
             _rigidbody = new RigidBody(this);
             _rigidbody.SpeedMps = 2;
-            _rigidbody.IsMovingRight = true;
+            _rigidbody.Movement = new Vector2(1, 0);    //Right
         }
 
         /// <summary>
@@ -61,22 +61,20 @@ namespace Platformer.Enemies
                 //Check if the enemy hit a wall...
                 if (this.Location.X == nextPosition.X)
                 {
-                    _rigidbody.IsMovingRight = !_rigidbody.IsMovingRight;
-                    _rigidbody.IsMovingLeft = !_rigidbody.IsMovingLeft;
+                    _rigidbody.Movement *= new Vector2(-1, 0);
                 }
                 else
                 {
                     //Checking if enemy at the end of the floor by checking one pixel left or right
                     Vector2 postionToCheckTheEmptinessOfTheVoid;
-                    if (_rigidbody.IsMovingLeft)
+                    if (_rigidbody.Movement.X < 0)
                         postionToCheckTheEmptinessOfTheVoid = new Vector2(nextPosition.X - 1, nextPosition.Y + this.Height + 1);
                     else
                         postionToCheckTheEmptinessOfTheVoid = new Vector2(nextPosition.X + this.Width + 1, nextPosition.Y + this.Height + 1);
 
                     if (this.GetCollision(postionToCheckTheEmptinessOfTheVoid, Vector2.One, Constants.TYPE_COLLIDER_WALLS) == null)
                     {
-                        _rigidbody.IsMovingRight = !_rigidbody.IsMovingRight;
-                        _rigidbody.IsMovingLeft = !_rigidbody.IsMovingLeft;
+                        _rigidbody.Movement *= new Vector2(-1, 0);
                     }
                 }
             }

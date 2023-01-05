@@ -118,6 +118,11 @@ namespace Platformer.Objects
             _input = new CharacterInput(this);
             _input.JumpKey = Keys.W;
             _input.FireKey = Keys.Space;
+            _input.CrouchKey = Keys.S;
+
+            //We cannot go up or down
+            _input.UpKey = Keys.None;
+            _input.DownKey = Keys.None;
 
         }
 
@@ -187,12 +192,11 @@ namespace Platformer.Objects
 
 
             //Movement...
-            _rigidBody.IsMovingLeft = _input.IsLeft;
-            _rigidBody.IsMovingRight = _input.IsRight;
+            _rigidBody.Movement = _input.GetMovement();
 
             if (_input.IsLeft || _input.IsRight)
                 _isCrouch = false;
-            else if (_isGrounded && _input.IsDown)
+            else if (_isGrounded && _input.IsCrouch)
                 _isCrouch = true;
 
 

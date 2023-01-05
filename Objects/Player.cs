@@ -116,13 +116,13 @@ namespace Platformer.Objects
 
             //Setup the inputs...
             _input = new CharacterInput(this);
-            _input.JumpKey = Keys.W;
-            _input.FireKey = Keys.Space;
-            _input.CrouchKey = Keys.S;
+            _input.Jump = InputMap.W;
+            _input.Fire = InputMap.Space;
+            _input.Crouch = InputMap.S;
 
             //We cannot go up or down
-            _input.UpKey = Keys.None;
-            _input.DownKey = Keys.None;
+            _input.Up = InputMap.None;
+            _input.Down = InputMap.None;
 
         }
 
@@ -194,9 +194,9 @@ namespace Platformer.Objects
             //Movement...
             _rigidBody.Movement = _input.GetMovement();
 
-            if (_input.IsLeft || _input.IsRight)
+            if (_input.IsLeftActive() || _input.IsRightActive())
                 _isCrouch = false;
-            else if (_isGrounded && _input.IsCrouch)
+            else if (_isGrounded && _input.IsCrouchActive())
                 _isCrouch = true;
 
 
@@ -267,7 +267,7 @@ namespace Platformer.Objects
 
             //--------------------
             //Jumping??
-            if (_isGrounded && _input.IsNewJump)
+            if (_isGrounded && _input.IsJumpNewlyActive())
             {
                 //Start jumping...
                 _rigidBody.AddForce(new Vector2(0, -JUMP_HEIGHT), _rigidBody.SpeedMps * 1.5f);
@@ -275,7 +275,7 @@ namespace Platformer.Objects
 
             //-------------------
             //Firing...
-            if (_isGrounded && _input.IsNewFire)
+            if (_isGrounded && _input.IsFireNewlyActive())
             {
                 //Firing...
                 Fire();
@@ -353,13 +353,13 @@ namespace Platformer.Objects
             CharacterAnimations animationToUse;
 
 
-            if (_input.IsLeft)
+            if (_input.IsLeftActive())
             {
                 //Left....
                 animationToUse = CharacterAnimations.character_run_left;
                 _lastMoveWasRight = false;
             }
-            else if (_input.IsRight)
+            else if (_input.IsRightActive())
             {
                 //Right....
                 animationToUse = CharacterAnimations.character_run_right;
@@ -414,7 +414,7 @@ namespace Platformer.Objects
                     //Landing...
                     _footstepPlayer.Play(_landSfx);
                 }
-                else if (_input.IsLeft || _input.IsRight)
+                else if (_input.IsLeftActive() || _input.IsRightActive())
                 {
                     //Footsteps!
                     _footstepPlayer.Play(_footstepSfx);

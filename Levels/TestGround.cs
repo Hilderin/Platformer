@@ -18,7 +18,7 @@ namespace Platformer.Levels
         /// <summary>
         /// Loading
         /// </summary>
-        public override void Load()
+        protected override void Load()
         {
             
 

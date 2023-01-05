@@ -19,7 +19,7 @@ namespace Platformer.UI
         /// <summary>
         /// Loading
         /// </summary>
-        public override void Load()
+        protected override void Load()
         {
             _game = this.Game.RootGameObject as PlatformerGame;
 

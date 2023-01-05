@@ -64,7 +64,7 @@ namespace Platformer.Objects
         /// <summary>
         /// Loading
         /// </summary>
-        public override void Load()
+        protected override void Load()
         {
             SpriteAnimationRender animRender = Add(new SpriteAnimationRender("animations\\bullet"));
             animRender.Bounds = this.Bounds.CenterMiddle(animRender.Width, animRender.Height);
@@ -74,7 +74,7 @@ namespace Platformer.Objects
         /// <summary>
         /// Update
         /// </summary>
-        public override void Update()
+        protected override void Update()
         {
             _lifeTime += this.ElapsedGameTimeSeconds;
 

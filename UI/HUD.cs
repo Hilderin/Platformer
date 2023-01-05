@@ -30,7 +30,7 @@ namespace Platformer.UI
         /// <summary>
         /// Loading
         /// </summary>
-        public override void Load()
+        protected override void Load()
         {
             _game = this.Game.RootGameObject as PlatformerGame;
 
@@ -47,7 +47,7 @@ namespace Platformer.UI
         /// <summary>
         /// Update
         /// </summary>
-        public override void Update()
+        protected override void Update()
         {
             //No need to recalculte the text at each frame!
             if (_game != null && _game.Player != null)

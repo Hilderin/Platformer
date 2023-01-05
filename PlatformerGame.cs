@@ -126,7 +126,7 @@ namespace Platformer
         /// <summary>
         /// Chargement du contenu
         /// </summary>
-        public override void Load()
+        protected override void Load()
         {
             SetupCamera();
 
@@ -137,7 +137,7 @@ namespace Platformer
         /// <summary>
         /// Update of PlatformerGame
         /// </summary>
-        public override void Update()
+        protected override void Update()
         {
 
             if (Input.IsKeyPressed(Keys.Escape))

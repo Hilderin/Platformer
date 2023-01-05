@@ -49,7 +49,7 @@ namespace Platformer.UI
         /// <summary>
         /// Load
         /// </summary>
-        public override void Load()
+        protected override void Load()
         {
             _upRenderer = Add(new TextureRender("button_up", this.Bounds));
             _overRenderer = Add(new TextureRender("button_over", this.Bounds));

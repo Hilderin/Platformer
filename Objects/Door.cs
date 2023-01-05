@@ -80,7 +80,7 @@ namespace Platformer.Objects
         /// <summary>
         /// Loading
         /// </summary>
-        public override void Load()
+        protected override void Load()
         {
             _game = this.Game.RootGameObject as PlatformerGame;
 
@@ -92,7 +92,7 @@ namespace Platformer.Objects
         /// <summary>
         /// Update
         /// </summary>
-        public override void Update()
+        protected override void Update()
         {
             if (_isOpening)
             {

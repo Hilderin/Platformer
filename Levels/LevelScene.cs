@@ -26,7 +26,7 @@ namespace Platformer.Levels
         /// <summary>
         /// Load the level
         /// </summary>
-        public override void Load()
+        protected override void Load()
         {
             Add(new GameContentContainer("gamecontent\\" + _roomName));
         }

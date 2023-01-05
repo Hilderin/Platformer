@@ -124,7 +124,7 @@ namespace Platformer.Objects
         /// <summary>
         /// Player
         /// </summary>
-        public override void Load()
+        protected override void Load()
         {
             _game = this.Game.RootGameObject as PlatformerGame;
 
@@ -181,7 +181,7 @@ namespace Platformer.Objects
         /// <summary>
         /// Update each frame
         /// </summary>
-        public override void Update()
+        protected override void Update()
         {
 
 

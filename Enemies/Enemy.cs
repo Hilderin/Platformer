@@ -33,7 +33,7 @@ namespace Platformer.Enemies
         /// <summary>
         /// Loading...
         /// </summary>
-        public override void Load()
+        protected override void Load()
         {
             var animation = Add(new SpriteAnimationRender("animations\\enemy"));
             animation.Bounds = this.Bounds.CenterBottom(animation.Width, animation.Height);
@@ -48,7 +48,7 @@ namespace Platformer.Enemies
         /// <summary>
         /// Updating...
         /// </summary>
-        public override void Update()
+        protected override void Update()
         {
             Vector2 nextPositionOrigin = _rigidbody.ApplyPhysics();
             Vector2 nextPosition = nextPositionOrigin;

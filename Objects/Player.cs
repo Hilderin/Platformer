@@ -152,8 +152,9 @@ namespace Platformer.Objects
             this.EnableCollider();
 
             //Rigidbody to calculate physics (Gravity)
-            _rigidBody = new RigidBody(this);
+            _rigidBody = AddComponent<RigidBody>();
             _rigidBody.SpeedMps = 3;
+            _rigidBody.ColliderTypes = Constants.TYPE_COLLIDER_WALLS;
 
             //Animator...
             _charactorAnimator = Add(new SpriteAnimator<CharacterAnimations>("animations"));
@@ -188,31 +189,21 @@ namespace Platformer.Objects
         /// </summary>
         protected override void Update()
         {
-
-
-
-            //Movement...
+            //Update the movement of the player in the rigid body
             _rigidBody.Movement = _input.GetMovement();
 
+            //Movement...
             if (_input.IsLeftActive() || _input.IsRightActive())
                 _isCrouch = false;
             else if (_isGrounded && _input.IsCrouchActive())
                 _isCrouch = true;
 
 
-
-            //Applying physics...
-            Vector2 nextPosition = _rigidBody.ApplyPhysics();
-
-
             //Check for collision...
-            Collision collistion = this.GetCollision(nextPosition, Constants.TYPE_COLLIDER_WALLS);
-            if (collistion != null)
+            if (_rigidBody.Collistion != null)
             {
-                nextPosition = collistion.StopLocation;
-
                 //Is grounded?
-                _isGrounded = (nextPosition.Y == this.Y);
+                _isGrounded = (this.Location.Y == _rigidBody.LastLocation.Y);
 
             }
             else
@@ -223,14 +214,14 @@ namespace Platformer.Objects
             }
 
             //Check collision with enemies...
-            Collision collisionEnemy = this.GetCollision(nextPosition, Constants.TYPE_ENEMIES);
+            Collision collisionEnemy = this.GetCollision(this.Location, Constants.TYPE_ENEMIES);
             if (collisionEnemy != null)
             {
                 this.Health--;
             }
 
             //Check collision with obstacles...
-            Collision collisionObstacles = this.GetCollision(nextPosition, Constants.TYPE_OBSTACLES);
+            Collision collisionObstacles = this.GetCollision(this.Location, Constants.TYPE_OBSTACLES);
             if (collisionObstacles != null)
             {
                 foreach (GameObject obstacle in collisionObstacles.CollidesWith)
@@ -241,7 +232,7 @@ namespace Platformer.Objects
             }
 
             //Check collision with action collider...
-            Collision collisionPlayerActionCollides = this.GetCollision(nextPosition, Constants.TYPE_PLAYER_ACTION_COLLIDE);
+            Collision collisionPlayerActionCollides = this.GetCollision(this.Location, Constants.TYPE_PLAYER_ACTION_COLLIDE);
             if (collisionPlayerActionCollides != null)
             {
                 foreach (GameObject actionObj in collisionPlayerActionCollides.CollidesWith)
@@ -259,9 +250,6 @@ namespace Platformer.Objects
                     _game.GameOver();
                 return;
             }
-
-
-            this.TranslateTo(nextPosition);
 
 
 
@@ -295,7 +283,7 @@ namespace Platformer.Objects
             _isLastGrounded = _isGrounded;
 
             
-            this.Game.MainCamera.Location = nextPosition + OFFSET_CAMERA - new Vector2(this.Game.CenterX, this.Game.CenterY);
+            this.Game.MainCamera.Location = this.Location + OFFSET_CAMERA - new Vector2(this.Game.CenterX, this.Game.CenterY);
 
             if (_game != null & _game.MinimapCamera != null)
                 _game.MinimapCamera.Location = this.Game.MainCamera.Location;

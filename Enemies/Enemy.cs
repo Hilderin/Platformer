@@ -18,7 +18,7 @@ namespace Platformer.Enemies
         /// <summary>
         /// RigidBody
         /// </summary>
-        private RigidBody _rigidbody;
+        private RigidBody _rigidBody;
 
         /// <summary>
         /// Constructor
@@ -40,9 +40,11 @@ namespace Platformer.Enemies
 
             this.EnableCollider();
 
-            _rigidbody = new RigidBody(this);
-            _rigidbody.SpeedMps = 2;
-            _rigidbody.Movement = new Vector2(1, 0);    //Right
+            _rigidBody = AddComponent<RigidBody>();
+            _rigidBody.SpeedMps = 2;
+            _rigidBody.ColliderTypes = Constants.TYPE_COLLIDER_WALLS;
+            _rigidBody.Movement = new Vector2(1, 0);    //Right
+
         }
 
         /// <summary>
@@ -50,38 +52,28 @@ namespace Platformer.Enemies
         /// </summary>
         protected override void Update()
         {
-            Vector2 nextPositionOrigin = _rigidbody.ApplyPhysics();
-            Vector2 nextPosition = nextPositionOrigin;
-
-            Collision collistion = this.GetCollision(nextPositionOrigin, Constants.TYPE_COLLIDER_WALLS);
-            if (collistion != null)
+            if (_rigidBody.Collistion != null)
             {
-                nextPosition = collistion.StopLocation;
-
                 //Check if the enemy hit a wall...
-                if (this.Location.X == nextPosition.X)
+                if (this.Location.X == _rigidBody.LastLocation.X)
                 {
-                    _rigidbody.Movement *= new Vector2(-1, 0);
+                    _rigidBody.Movement *= new Vector2(-1, 0);
                 }
                 else
                 {
                     //Checking if enemy at the end of the floor by checking one pixel left or right
                     Vector2 postionToCheckTheEmptinessOfTheVoid;
-                    if (_rigidbody.Movement.X < 0)
-                        postionToCheckTheEmptinessOfTheVoid = new Vector2(nextPosition.X - 1, nextPosition.Y + this.Height + 1);
+                    if (_rigidBody.Movement.X < 0)
+                        postionToCheckTheEmptinessOfTheVoid = new Vector2(this.Location.X - 1, this.Location.Y + this.Height + 1);
                     else
-                        postionToCheckTheEmptinessOfTheVoid = new Vector2(nextPosition.X + this.Width + 1, nextPosition.Y + this.Height + 1);
+                        postionToCheckTheEmptinessOfTheVoid = new Vector2(this.Location.X + this.Width + 1, this.Location.Y + this.Height + 1);
 
                     if (this.GetCollision(postionToCheckTheEmptinessOfTheVoid, Vector2.One, Constants.TYPE_COLLIDER_WALLS) == null)
                     {
-                        _rigidbody.Movement *= new Vector2(-1, 0);
+                        _rigidBody.Movement *= new Vector2(-1, 0);
                     }
                 }
             }
-
-
-            //And we move the object at the calculated coords...
-            this.Location = nextPosition;
         }
 
         /// <summary>

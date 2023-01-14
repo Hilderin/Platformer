@@ -1,4 +1,6 @@
 ﻿using FNAEngine2D;
+using FNAEngine2D.Collisions;
+using FNAEngine2D.GameObjects;
 using Microsoft.Xna.Framework;
 using Platformer.Enemies;
 using System;

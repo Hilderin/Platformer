@@ -1,5 +1,6 @@
 ﻿using FNAEngine2D;
 using FNAEngine2D.Aseprite;
+using FNAEngine2D.GameObjects;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;

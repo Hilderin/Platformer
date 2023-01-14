@@ -1,4 +1,7 @@
 ﻿using FNAEngine2D;
+using FNAEngine2D.Collisions;
+using FNAEngine2D.Components;
+using FNAEngine2D.GameObjects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Input;

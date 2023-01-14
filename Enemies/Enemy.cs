@@ -1,4 +1,6 @@
 ﻿using FNAEngine2D;
+using FNAEngine2D.Components;
+using FNAEngine2D.GameObjects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Newtonsoft.Json;

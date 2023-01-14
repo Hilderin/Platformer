@@ -11,6 +11,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FNAEngine2D.Animations;
 
 namespace Platformer.Enemies
 {
@@ -38,7 +39,7 @@ namespace Platformer.Enemies
         /// </summary>
         protected override void Load()
         {
-            var animation = Add(new SpriteAnimationRender("animations\\enemy"));
+            var animation = Add(new SpriteAnimator("animations\\enemy"));
             animation.Bounds = this.Bounds.CenterBottom(animation.Width, animation.Height);
 
             if(!this.Collidable)

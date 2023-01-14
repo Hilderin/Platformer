@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FNAEngine2D.Animations;
 
 namespace Platformer.Objects
 {
@@ -66,12 +67,12 @@ namespace Platformer.Objects
         /// <summary>
         /// Charactor animator
         /// </summary>
-        private SpriteAnimator<CharacterAnimations> _charactorAnimator;
+        private MultiSpriteAnimator<CharacterAnimations> _charactorAnimator;
 
         /// <summary>
         /// Fire animator
         /// </summary>
-        private SpriteAnimator<FireAnimations> _fireAnimator;
+        private MultiSpriteAnimator<FireAnimations> _fireAnimator;
 
         /// <summary>
         /// Player for foot steps
@@ -161,8 +162,8 @@ namespace Platformer.Objects
             _rigidBody.UseGravity = true;
 
             //Animator...
-            _charactorAnimator = Add(new SpriteAnimator<CharacterAnimations>("animations"));
-            _fireAnimator = Add(new SpriteAnimator<FireAnimations>("animations", false, false, true));
+            _charactorAnimator = Add(new MultiSpriteAnimator<CharacterAnimations>("animations"));
+            _fireAnimator = Add(new MultiSpriteAnimator<FireAnimations>("animations", false, false, true));
 
 
             //Footsteps........

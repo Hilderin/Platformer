@@ -1,4 +1,5 @@
 ﻿using FNAEngine2D;
+using FNAEngine2D.Animations;
 using FNAEngine2D.GameObjects;
 using Microsoft.Xna.Framework.Audio;
 using Newtonsoft.Json;
@@ -25,7 +26,7 @@ namespace Platformer.Objects
         /// <summary>
         /// Animation render
         /// </summary>
-        private SpriteAnimationRender _spriteAnimationRender;
+        private SpriteAnimator _spriteAnimationRender;
 
         /// <summary>
         /// Door is opening?
@@ -85,7 +86,7 @@ namespace Platformer.Objects
         {
             _game = this.Game.RootGameObject as PlatformerGame;
 
-            _spriteAnimationRender = Add(new SpriteAnimationRender("animations\\door_yellow", false, false, false));
+            _spriteAnimationRender = Add(new SpriteAnimator("animations\\door_yellow", false, false, false));
             _spriteAnimationRender.Location = this.Location;
             _spriteAnimationRender.InvertedX = _invertedX;
         }

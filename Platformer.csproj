@@ -84,5 +84,6 @@
   <ItemGroup>
     <Content Include="Platformer.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

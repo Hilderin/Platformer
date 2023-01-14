@@ -1,4 +1,5 @@
 ﻿using FNAEngine2D;
+using FNAEngine2D.Animations;
 using FNAEngine2D.GameObjects;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace Platformer.Objects
         /// </summary>
         protected override void Load()
         {
-            SpriteAnimationRender animRender = Add(new SpriteAnimationRender("animations\\lava"));
+            SpriteAnimator animRender = Add(new SpriteAnimator("animations\\lava"));
             animRender.Bounds = this.Bounds.CenterMiddle(animRender.Width, animRender.Height);
             
         }

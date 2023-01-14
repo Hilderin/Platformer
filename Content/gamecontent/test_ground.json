@@ -1084,7 +1084,7 @@
         "Name": "Collidables",
         "Collidable": true
       },
-      "ClassName": "TileSetRender"
+      "ClassName": "TileSetGrid"
     },
     {
       "Props": {
@@ -1123,7 +1123,7 @@
         "Name": "NonCollidables",
         "Depth": -1.0
       },
-      "ClassName": "TileSetRender"
+      "ClassName": "TileSetGrid"
     },
     {
       "Props": {

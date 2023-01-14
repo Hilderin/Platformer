@@ -27,7 +27,7 @@ namespace Platformer.Levels
 
 
             //Background
-            Add(new TextureRender("backgrounds\\night"));
+            Add(new TextureBox("backgrounds\\night"));
 
 
             //Floor...

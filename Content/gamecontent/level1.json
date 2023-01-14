@@ -11350,7 +11350,7 @@
         "Name": "Walls",
         "Collidable": true
       },
-      "ClassName": "TileSetRender"
+      "ClassName": "TileSetGrid"
     },
     {
       "Props": {
@@ -11608,7 +11608,7 @@
         "Name": "TilesFront",
         "Depth": -10.0
       },
-      "ClassName": "TileSetRender"
+      "ClassName": "TileSetGrid"
     },
     {
       "Props": {

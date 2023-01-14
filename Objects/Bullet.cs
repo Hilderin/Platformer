@@ -1,4 +1,5 @@
 ﻿using FNAEngine2D;
+using FNAEngine2D.Animations;
 using FNAEngine2D.Collisions;
 using FNAEngine2D.GameObjects;
 using Microsoft.Xna.Framework;
@@ -68,7 +69,7 @@ namespace Platformer.Objects
         /// </summary>
         protected override void Load()
         {
-            SpriteAnimationRender animRender = Add(new SpriteAnimationRender("animations\\bullet"));
+            SpriteAnimator animRender = Add(new SpriteAnimator("animations\\bullet"));
             animRender.Bounds = this.Bounds.CenterMiddle(animRender.Width, animRender.Height);
 
         }

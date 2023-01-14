@@ -11,7 +11,7 @@
         "Size": "480, 200",
         "LayerMask": 2
       },
-      "ClassName": "TextRender"
+      "ClassName": "Label"
     },
     {
       "Props": {

@@ -17,7 +17,7 @@ namespace Platformer.UI
         private TextureBox _upRenderer;
         private TextureBox _overRenderer;
         private TextureBox _downRenderer;
-        private TextRender _textRender;
+        private Label _textRender;
 
         [JsonIgnore]
         public Action OnClick;
@@ -59,7 +59,7 @@ namespace Platformer.UI
             _downRenderer.Hide();
 
 
-            _textRender = Add(new TextRender(Text, "fonts\\Roboto-Bold", 12, this.Bounds, Color.White, TextHorizontalAlignment.Center, TextVerticalAlignment.Middle));
+            _textRender = Add(new Label(Text, "fonts\\Roboto-Bold", 12, this.Bounds, Color.White, TextHorizontalAlignment.Center, TextVerticalAlignment.Middle));
 
 
         }

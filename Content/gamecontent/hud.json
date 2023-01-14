@@ -1,7 +1,7 @@
 {
   "Objects": [
     {
-      "ClassName": "TextRender",
+      "ClassName": "Label",
       "Props": {
         "RotationOrigin": "0, 0",
         "FontName": "fonts\\Roboto-Bold",

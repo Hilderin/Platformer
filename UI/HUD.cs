@@ -21,7 +21,7 @@ namespace Platformer.UI
         /// <summary>
         /// Text for number of lives
         /// </summary>
-        private TextRender _textNbLive;
+        private Label _textNbLive;
 
         /// <summary>
         /// Last Health
@@ -42,7 +42,7 @@ namespace Platformer.UI
             //Add(new FPSRender("fonts\\Roboto-Bold", 12, Color.Yellow))
             //    .SetLayerMask(PlatformerHost.UICamera.LayerMask);
 
-            _textNbLive = Find<TextRender>("Health");
+            _textNbLive = Find<Label>("Health");
         }
 
         /// <summary>

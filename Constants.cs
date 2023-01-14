@@ -1,5 +1,6 @@
 ﻿using FNAEngine2D;
 using FNAEngine2D.GameObjects;
+using FNAEngine2D.TileSets;
 using Platformer.Enemies;
 using Platformer.Objects;
 using System;

@@ -31,8 +31,8 @@ namespace Platformer.Objects
         /// </summary>
         protected override void Load()
         {
-            SpriteAnimator animRender = Add(new SpriteAnimator("animations\\lava"));
-            animRender.Bounds = this.Bounds.CenterMiddle(animRender.Width, animRender.Height);
+            SpriteAnimator animRender = AddComponent(new SpriteAnimator("animations\\lava", StartPosition.CenterMiddle));
+            //animRender.Bounds = this.Bounds.CenterMiddle(animRender.Width, animRender.Height);
             
         }
 

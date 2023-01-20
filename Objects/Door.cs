@@ -15,7 +15,7 @@ namespace Platformer.Objects
     /// <summary>
     /// A door
     /// </summary>
-    public class Door: GameObject, IHittable, IPlayerActionCollide
+    public class Door: GameObject, IHittable, IPlayerActionCollide, IUpdate
     {
 
         /// <summary>
@@ -86,15 +86,15 @@ namespace Platformer.Objects
         {
             _game = this.Game.RootGameObject as PlatformerGame;
 
-            _spriteAnimationRender = Add(new SpriteAnimator("animations\\door_yellow", false, false, false));
-            _spriteAnimationRender.Location = this.Location;
+            _spriteAnimationRender = AddComponent(new SpriteAnimator("animations\\door_yellow", false, false, false));
+            //_spriteAnimationRender.Location = this.Location;
             _spriteAnimationRender.InvertedX = _invertedX;
         }
 
         /// <summary>
         /// Update
         /// </summary>
-        protected override void Update()
+        public void Update()
         {
             if (_isOpening)
             {

@@ -18,7 +18,7 @@ namespace Platformer.Enemies
     /// <summary>
     /// Basic enemy object
     /// </summary>
-    public class Enemy: GameObject, IHittable
+    public class Enemy: GameObject, IHittable, IUpdate
     {
         /// <summary>
         /// RigidBody
@@ -39,8 +39,8 @@ namespace Platformer.Enemies
         /// </summary>
         protected override void Load()
         {
-            var animation = Add(new SpriteAnimator("animations\\enemy"));
-            animation.Bounds = this.Bounds.CenterBottom(animation.Width, animation.Height);
+            var animation = AddComponent(new SpriteAnimator("animations\\enemy", StartPosition.CenterBottom));
+            //animation.Bounds = this.Bounds.CenterBottom(animation.Width, animation.Height);
 
             if(!this.Collidable)
                 this.EnableCollider();
@@ -56,7 +56,7 @@ namespace Platformer.Enemies
         /// <summary>
         /// Updating...
         /// </summary>
-        protected override void Update()
+        public void Update()
         {
             if (_rigidBody.Collision != null)
             {

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Platformer.UI
 {
-    public class HUD: GameObject
+    public class HUD: GameObject, IUpdate
     {
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Platformer.UI
         /// <summary>
         /// Update
         /// </summary>
-        protected override void Update()
+        public void Update()
         {
             //No need to recalculte the text at each frame!
             if (_game != null && _game.Player != null)

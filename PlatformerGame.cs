@@ -15,7 +15,7 @@ namespace Platformer
     /// <summary>
     /// Game de Platformer
     /// </summary>
-    public class PlatformerGame : GameObject
+    public class PlatformerGame : GameObject, IUpdate
     {
         
         /// <summary>
@@ -81,7 +81,7 @@ namespace Platformer
         {
             Remove(typeof(UI.EscapeMenu));
 
-            Level.Paused = false;
+            Level.PausedSelf = false;
 
             this.Mouse.HideMouse();
         }
@@ -91,7 +91,7 @@ namespace Platformer
         /// </summary>
         public void Win()
         {
-            Level.Paused = true;
+            Level.PausedSelf = true;
 
             if (Find<UI.Win>() == null)
                 Add(new UI.Win());
@@ -103,7 +103,7 @@ namespace Platformer
         /// </summary>
         public void GameOver()
         {
-            Level.Paused = true;
+            Level.PausedSelf = true;
 
             if(this.Player != null)
                 this.Player.Destroy();
@@ -137,14 +137,14 @@ namespace Platformer
         /// <summary>
         /// Update of PlatformerGame
         /// </summary>
-        protected override void Update()
+        public void Update()
         {
 
             if (Input.IsKeyPressed(Keys.Escape))
             {
                 if (Find<UI.EscapeMenu>() == null)
                 {
-                    Level.Paused = true;
+                    Level.PausedSelf = true;
                     Add(new UI.EscapeMenu());
                 }
                 else

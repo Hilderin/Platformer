@@ -15,7 +15,7 @@ namespace Platformer.Objects
     /// <summary>
     /// Bullet
     /// </summary>
-    public class Bullet: GameObject
+    public class Bullet: GameObject, IUpdate
     {
         /// <summary>
         /// Types to collide with
@@ -69,15 +69,15 @@ namespace Platformer.Objects
         /// </summary>
         protected override void Load()
         {
-            SpriteAnimator animRender = Add(new SpriteAnimator("animations\\bullet"));
-            animRender.Bounds = this.Bounds.CenterMiddle(animRender.Width, animRender.Height);
+            SpriteAnimator animRender = AddComponent(new SpriteAnimator("animations\\bullet", StartPosition.CenterMiddle));
+            //animRender.Bounds = this.Bounds.CenterMiddle(animRender.Width, animRender.Height);
 
         }
 
         /// <summary>
         /// Update
         /// </summary>
-        protected override void Update()
+        public void Update()
         {
             _lifeTime += this.ElapsedGameTimeSeconds;
 

@@ -12,13 +12,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FNAEngine2D.Animations;
+using FNAEngine2D.Audio;
 
 namespace Platformer.Objects
 {
     /// <summary>
     /// Player
     /// </summary>
-    public class Player : GameObject
+    public class Player : GameObject, IUpdate
     {
         /// <summary>
         /// Real sizes
@@ -167,7 +168,7 @@ namespace Platformer.Objects
 
 
             //Footsteps........
-            _footstepPlayer = Add(new SoundEffectPlayer());
+            _footstepPlayer = AddComponent(new SoundEffectPlayer());
             _footstepPlayer.Volume = 0.2f;
             _footstepPlayer.MinimumRateSeconds = 0.5f;
 
@@ -178,7 +179,7 @@ namespace Platformer.Objects
 
 
             //Jump...
-            _jumpPlayer = Add(new SoundEffectPlayer());
+            _jumpPlayer = AddComponent(new SoundEffectPlayer());
             _jumpPlayer.Volume = 0.4f;
             _jumpSfx = _footstepPlayer.GetContent("sfx\\footsteps\\jump");
 
@@ -192,7 +193,7 @@ namespace Platformer.Objects
         /// <summary>
         /// Update each frame
         /// </summary>
-        protected override void Update()
+        public void Update()
         {
             //Update the movement of the player in the rigid body
             _rigidBody.Movement = _input.GetMovement();

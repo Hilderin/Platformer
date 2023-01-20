@@ -1797,126 +1797,14 @@
     },
     {
       "Props": {
-        "Location": "709, 576",
-        "PreviousRoom": "level1"
+        "PreviousRoom": "level1",
+        "Location": "709, 576"
       },
       "ClassName": "PlayerStart"
     },
     {
       "Props": {
-        "Location": "1433, 744",
-        "Collidable": true
-      },
-      "ClassName": "Lava"
-    },
-    {
-      "Props": {
-        "Location": "1449, 744",
-        "Collidable": true
-      },
-      "ClassName": "Lava"
-    },
-    {
-      "Props": {
-        "Location": "1465, 744",
-        "Collidable": true
-      },
-      "ClassName": "Lava"
-    },
-    {
-      "Props": {
-        "Location": "1481, 744",
-        "Collidable": true
-      },
-      "ClassName": "Lava"
-    },
-    {
-      "Props": {
-        "Location": "1497, 744",
-        "Collidable": true
-      },
-      "ClassName": "Lava"
-    },
-    {
-      "Props": {
-        "Location": "1513, 744",
-        "Collidable": true
-      },
-      "ClassName": "Lava"
-    },
-    {
-      "Props": {
-        "Location": "1529, 744",
-        "Collidable": true
-      },
-      "ClassName": "Lava"
-    },
-    {
-      "Props": {
-        "Location": "1545, 744",
-        "Collidable": true
-      },
-      "ClassName": "Lava"
-    },
-    {
-      "Props": {
-        "Location": "1561, 744",
-        "Collidable": true
-      },
-      "ClassName": "Lava"
-    },
-    {
-      "Props": {
-        "Location": "1577, 744",
-        "Collidable": true
-      },
-      "ClassName": "Lava"
-    },
-    {
-      "Props": {
-        "Location": "1593, 744",
-        "Collidable": true
-      },
-      "ClassName": "Lava"
-    },
-    {
-      "Props": {
-        "Location": "1609, 744",
-        "Collidable": true
-      },
-      "ClassName": "Lava"
-    },
-    {
-      "Props": {
-        "Location": "1625, 744",
-        "Collidable": true
-      },
-      "ClassName": "Lava"
-    },
-    {
-      "Props": {
-        "Location": "1641, 744",
-        "Collidable": true
-      },
-      "ClassName": "Lava"
-    },
-    {
-      "Props": {
-        "Location": "1432, 744",
-        "Collidable": true
-      },
-      "ClassName": "Lava"
-    },
-    {
-      "Props": {
-        "Location": "1655, 744",
-        "Collidable": true
-      },
-      "ClassName": "Lava"
-    },
-    {
-      "Props": {
-        "Location": "1045, 738",
+        "Location": "1806, 596",
         "Size": "22, 28",
         "Collidable": true
       },
@@ -1924,19 +1812,75 @@
     },
     {
       "Props": {
-        "Location": "1245, 643",
-        "Size": "22, 28",
+        "Location": "1424, 736",
+        "Size": "16, 16",
         "Collidable": true
       },
-      "ClassName": "Enemy"
+      "ClassName": "Lava"
     },
     {
       "Props": {
-        "Location": "1744, 596",
-        "Size": "22, 28",
+        "Location": "1440, 736",
+        "Size": "16, 16",
         "Collidable": true
       },
-      "ClassName": "Enemy"
+      "ClassName": "Lava"
+    },
+    {
+      "Props": {
+        "Location": "1505, 736",
+        "Size": "16, 16",
+        "Collidable": true
+      },
+      "ClassName": "Lava"
+    },
+    {
+      "Props": {
+        "Location": "1521, 736",
+        "Size": "16, 16",
+        "Collidable": true
+      },
+      "ClassName": "Lava"
+    },
+    {
+      "Props": {
+        "Location": "1536, 736",
+        "Size": "16, 16",
+        "Collidable": true
+      },
+      "ClassName": "Lava"
+    },
+    {
+      "Props": {
+        "Location": "1601, 736",
+        "Size": "16, 16",
+        "Collidable": true
+      },
+      "ClassName": "Lava"
+    },
+    {
+      "Props": {
+        "Location": "1617, 736",
+        "Size": "16, 16",
+        "Collidable": true
+      },
+      "ClassName": "Lava"
+    },
+    {
+      "Props": {
+        "Location": "1633, 736",
+        "Size": "16, 16",
+        "Collidable": true
+      },
+      "ClassName": "Lava"
+    },
+    {
+      "Props": {
+        "Location": "1648, 736",
+        "Size": "16, 16",
+        "Collidable": true
+      },
+      "ClassName": "Lava"
     }
   ]
 }

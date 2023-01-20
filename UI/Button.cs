@@ -61,6 +61,7 @@ namespace Platformer.UI
 
             _textRender = Add(new Label(Text, "fonts\\Roboto-Bold", 12, this.Bounds, Color.White, TextHorizontalAlignment.Center, TextVerticalAlignment.Middle));
 
+            _textRender.Depth = this.Depth - 100;        //Par dessus le restant
 
         }
 
@@ -72,21 +73,21 @@ namespace Platformer.UI
         {
             if (action == MouseAction.Enter || action == MouseAction.LeftButtonUp)
             {
-                _upRenderer.Visible = false;
-                _downRenderer.Visible = false;
-                _overRenderer.Visible = true;
+                _upRenderer.VisibleSelf = false;
+                _downRenderer.VisibleSelf = false;
+                _overRenderer.VisibleSelf = true;
             }
             else if (action == MouseAction.Leave)
             {
-                _upRenderer.Visible = true;
-                _downRenderer.Visible = false;
-                _overRenderer.Visible = false;
+                _upRenderer.VisibleSelf = true;
+                _downRenderer.VisibleSelf = false;
+                _overRenderer.VisibleSelf = false;
             }
             else if (action == MouseAction.LeftButtonDown)
             {
-                _upRenderer.Visible = false;
-                _downRenderer.Visible = true;
-                _overRenderer.Visible = false;
+                _upRenderer.VisibleSelf = false;
+                _downRenderer.VisibleSelf = true;
+                _overRenderer.VisibleSelf = false;
             }
 
             //When pressed down... the text needs to move down also...
